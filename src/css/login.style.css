@@ -1,5 +1,225 @@
+html, body {
+    color:       rgba(var(--color-blue), 1);
+    width:       100vw;
+    height:      100vh;
+    font-family: var(--font-base);
+}
 
 body {
-    font-family: var(--font-base);
-    color: rgba(var(--color-blue), 1);
+    display:          flex;
+    align-items:      center;
+    flex-direction:   column;
+    justify-content:  center;
+    background-color: rgba(var(--color-grey6), 1);
 }
+
+main {
+    width:          80%;
+    height:         90%;
+    display:        flex;
+    min-width:      256px;
+    box-shadow:     0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+}
+
+section {
+    width:          100%;
+    height:         50%;
+    padding:        .935rem;
+    display:        flex;
+    align-items:    center;
+    flex-direction: column;
+}
+
+.main_initialInfo {
+    gap:              1.35rem;
+    color:            white;
+    border-radius:    8px 8px 0 0;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+.main_initialInfo h1 {
+    font-size:   1.625rem;
+    font-weight: 600;
+    line-height: 2.6294rem;
+}
+
+.main_initialInfo_initialPhrase {
+    gap:            .625rem;
+    display:        flex;
+    text-align:     left;
+    flex-direction: column;
+}
+
+.main_initialInfo_initialPhrase p {
+    font-size:   1.375rem;
+    text-align:  left;
+    font-weight: 600;
+    line-height: 2rem;  
+}
+
+.main_initialInfo_initialPhrase span {
+    color:       rgba(var(--color-grey6), 1);
+    font-size:   .875rem;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.main_loginForm {
+    display:          flex;
+    border-radius:    0 0 8px 8px;
+    flex-direction:   column;
+    background-color: white;
+}
+
+.main_loginForm form {
+    gap:            1.25rem;
+    width:          100%;
+    height:         100%;
+    display:        flex;
+    flex-direction: column;   
+}
+
+.main_loginForm form h2 {
+    color:       rgba(var(--color-grey1), 1);
+    font-size:   1.25rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.main_loginForm_inputs {
+    gap:            1.25rem;
+    display:        flex;
+    flex-direction: column;
+}
+
+.main_loginForm_inputs div {
+    gap:            .625rem;
+    display:        flex;
+    flex-direction: column;  
+}
+
+label {
+    color:       rgba(var(--color-grey2), 1);
+    font-size:   0.875rem;
+    font-weight: 400;
+    line-height: 1.0625rem; 
+}
+
+input {
+    border:           none;
+    height:           1.875rem;
+    padding-left:     .625rem;
+    border-radius:    4px;
+    background-color: rgba(var(--color-grey6), 1);
+}
+
+input, input::placeholder {
+    color:       rgba(var(--color-grey2), 1);
+    font-size:   0.9rem;
+    font-weight: 400;
+}
+
+input:focus {
+    outline-color: rgba(var(--color-blue), 1);
+}
+
+button {
+    color:            white;
+    width:            14.125rem;
+    height:           2.5rem ;
+    font-size:        1rem;
+    max-width:        20.625rem;
+    align-self:       center;
+    font-weight:      600;
+    border-radius:    4px;
+    background-color: rgba(var(--color-blue), 1);
+}
+
+button:hover {
+    cursor:           pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+@media (min-width: 768px) {
+
+    main {
+        width:          70%;
+        height:         65%;
+        min-width:      none;
+        box-shadow:     none;
+        flex-direction: row;
+    }
+
+    section {
+        width:  50%;
+        height: 100%; 
+    }
+
+    .main_initialInfo {
+        gap:             3rem;
+        display:         flex;
+        padding:         10% 5%;
+        border-radius:   8px 0 0 8px;
+        flex-direction:  column;
+        justify-content: flex-start;
+    }
+
+    .main_initialInfo h1 {
+        width:      100%;
+        font-size:  1.7531rem;
+        text-align: left;
+    }
+
+    .main_initialInfo_initialPhrase {
+        gap:             0;
+        display:         flex;
+        flex-direction:  column;
+        justify-content: space-between;
+        
+    }
+
+    .main_initialInfo_initialPhrase p {
+        font-size: 1.5rem;
+    }
+
+    .main_initialInfo_initialPhrase span {
+        font-size: 1rem;
+    }
+
+    .main_loginForm {
+        box-shadow:    0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+        border-radius: 0 8px 8px 0;
+    }
+
+    .main_loginForm form {
+        gap:             2rem;
+        padding:         0 10%;
+        justify-content: center;
+    }
+
+    .main_loginForm_inputs {
+        gap:       1.375rem;
+        min-width: 100%;
+    }
+
+    .main_loginForm_inputs div {
+        gap: .5rem;
+    }
+
+    input {
+        height: 2.5rem;
+        padding:      0 1.125rem;
+    }
+
+    input, input::placeholder {
+        font-size: 1rem;  
+    }
+
+    button {
+        width:      100%;
+        max-width:  none;
+        margin-top: 20px;
+    }
+}
+   
