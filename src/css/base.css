@@ -1,0 +1,28 @@
+:root {
+
+    /* ------------------ main colors -------------------- */
+
+    --color-blue: rgb(65, 90, 243); /* brand-1 */
+    --color-blue-dark: rgb(65, 80, 210); /* brand-2 */
+    -color-blue-light: rgb(215, 228, 251); /* brand-3 */
+    
+    /* ------------------ grey scale --------------------- */
+
+    --color-grey1: rgb(33, 37, 41);
+    --color-grey2: rgb(52, 58, 64);
+    --color-grey3: rgb(173, 181, 189);
+    --color-grey4: rgb(233, 236, 239);
+    --color-grey5: rgb(241, 243, 245);
+    --color-grey6: rgb(241, 243, 245);
+
+    /* ---------------- feedback colors ------------------ */
+
+    --color-green: rgb(86, 207, 142); /* success */
+    --color-red-light: rgb(230, 68, 69); /* error-1 */
+    --color-red: rgb(240, 56, 57); /* error-2 */
+
+    /* ------------------ font base ---------------------- */
+
+    --font-base: 'Inter', sans-serif; 
+
+}
