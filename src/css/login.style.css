@@ -1,5 +1,5 @@
 
 body {
     font-family: var(--font-base);
-    color: var(--color-blue);
+    color: rgba(var(--color-blue), 1);
 }
