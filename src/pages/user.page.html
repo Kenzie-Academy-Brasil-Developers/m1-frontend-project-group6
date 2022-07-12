@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="src/css/base.css">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/user.style.css">
+    
 </head>
 
 <body>
@@ -25,29 +26,29 @@
 
         <h1>KenzieHabit</h1>
 
-        <img src="">
+        <img class="header_userImage" src="">
 
     </header>
 
-    <section> 
+    <section class="section_userInfo"> 
 
-        <img src="">
+        <img class="section_userInfo_image" src="">
 
-        <h2></h2>
+        <h2 class="section_userInfo_name"></h2>
 
     </section>
 
     <main>
 
-        <section>
+        <section class="section_habits">
 
-            <h2>Tarefas</h2>
+            <h2 class="section_habits_title">Tarefas</h2>
 
             <nav>
 
-                <button>Todos</button>
-                <button>Concluídos</button>
-                <button>Criar</button>
+                <button class="btnFilter_all">Todos</button>
+                <button class="btnFilter_concluded">Concluídos</button>
+                <button class="btnCreate">Criar</button>
 
             </nav>
 
@@ -59,11 +60,11 @@
 
                 <tr>
 
-                    <th scope="col">Status</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Editar</th>
+                    <th class="th_status" scope="col">Status</th>
+                    <th class="th_title" scope="col">Título</th>
+                    <th class="th_description" scope="col">Descrição</th>
+                    <th class="th_category" scope="col">Categoria</th>
+                    <th class="th_edit" scope="col">Editar</th>
 
                 </tr>
 
@@ -71,20 +72,14 @@
 
             <tbody>
 
-                <!-- 
-                    <tr>
-                        <td>
-                -->
-
-                </tbody>
+            </tbody>
 
         </table>
 
-        <button>Carregar mais</button>
+        <button class="btnShowMore">Carregar mais</button>
 
     </main>
     
-
     <script type="module" src="/src/js/controllers/user.controller.js"></script>
 
 </body>
