@@ -217,8 +217,9 @@ button:hover {
     }
 
     button {
-        width:     100%;
-        max-width: none;
+        width:      100%;
+        max-width:  none;
+        margin-top: 20px;
     }
 }
    
