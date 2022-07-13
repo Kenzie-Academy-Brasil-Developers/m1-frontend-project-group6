@@ -245,7 +245,6 @@ td {
         border:        2px solid rgba(var(--color-grey4), 1);
         height:        667;  
         max-width:     1440px;
-        max-height:    667px;
         border-radius: .25rem;
     }
 
@@ -273,6 +272,11 @@ td {
     .th_description, .habit_description, .habit_category, .th_category, .btn_showMore {
         display:  flex;
         position: relative;
+    }
+
+    tbody {
+        max-height: 550px;
+        overflow-y: hidden;
     }
 
     td {

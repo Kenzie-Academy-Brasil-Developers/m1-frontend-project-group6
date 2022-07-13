@@ -78,5 +78,4 @@ function showMore() {
     btnShowMore.addEventListener('click', (e) => {
         habitsTable.style.overflow = 'visible'
     })
-
 }
