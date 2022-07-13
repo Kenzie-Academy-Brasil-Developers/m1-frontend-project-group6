@@ -30,3 +30,23 @@ function showHabits(data) {
 
 //showHabits(data)
 
+function filters() {
+    const filterBtns = document.querySelector('nav')
+    filterBtns.addEventListener('click', (e) => {
+        const element = e.target
+
+        if (element.innerText === 'Todos') {
+            habitsTable.innerText = ''
+
+            showHabits(data)
+        }
+
+        else if (element.innerText === 'Concluídos') {
+            habitsTable.innerText = ''
+
+            showHabits(dataConcluded)
+        }
+    })
+}
+
+filters()
