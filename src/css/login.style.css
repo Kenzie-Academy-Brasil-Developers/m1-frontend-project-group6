@@ -124,6 +124,10 @@ input:focus {
     outline-color: rgba(var(--color-blue), 1);
 }
 
+input:invalid {
+    outline-color: rgba(var(--color-red-light), 1);
+}
+
 button {
     color:            white;
     width:            14.125rem;
