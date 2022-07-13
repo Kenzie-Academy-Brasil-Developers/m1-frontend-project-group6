@@ -15,6 +15,8 @@
     --color-grey5: 241, 243, 245;
     --color-grey6: 241, 243, 245;
 
+    --color-white: 255, 255, 255;
+
     /* ---------------- feedback colors ------------------ */
 
     --color-green: 86, 207, 142; /* success */

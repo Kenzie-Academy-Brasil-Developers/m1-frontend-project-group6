@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="src/css/base.css">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/user.style.css">
-    
+
 </head>
 
 <body>
@@ -31,7 +31,7 @@
 
     </header>
 
-    <section class="section_userInfo"> 
+    <section class="section_userInfo">
 
         <img class="section_userInfo_image" src="">
 
@@ -116,9 +116,48 @@
         <button class="btn_showMore">Carregar mais</button>
 
     </main>
+    
+   <footer></footer>
 
-    <footer></footer>
-
+    <div class="edit_habit_modal">
+        <div class="inner_edit_habit_modal">
+            <div class="edit_modal_header">
+                <h2>Editar hábito</h2>
+                <button id="close_edit_modal_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
+            </div>
+            <form class="edit_habit_form" action="#">
+                <div class="title_div">
+                    <label for="habit-title">Título</label>
+                    <input name="habit-title" id="habit_title" cols="30" rows="5"
+                        placeholder="Título a ser alterado aqui">
+                </div>
+                <div class="description_div">
+                    <label for="habit_description" id="habit_description">Descrição</label>
+                    <textarea name="habit-description" id="habit_description" cols="30" rows="5"
+                        placeholder="Descrição a ser alterada aqui"></textarea>
+                </div>
+                <div class="category_div">
+                    <label for="habit-category">Categoria</label>
+                    <select name="habit-category" id="habit-category">
+                        <option value="Casa">Casa</option>
+                        <option value="Estudo">Estudo</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Saúde">Saúde</option>
+                    </select>
+                </div>
+                <div class="status_div">
+                    <label for="habit_status">Status</label>
+                    <input type="checkbox" id="habit_status">
+                </div>
+            </form>
+            <div class="modal_btns_div">
+                <button id="delete_habit_button" name="delete_habit_button">Excluir</button>
+                <button id="save_changes_habit_button" name="save_changes_habit_button">Salvar alterações</button>
+            </div>
+        </div>
+    </div>
+    
     <div class="modal_createHabit">
 
         <div class="createHabit_inner">
@@ -150,12 +189,9 @@
         </form>
 
     </div>
-
     
     <script type="module" src="src/js/controllers/user.controller.js"></script>
 
 </body>
 
 </html>
-
-
