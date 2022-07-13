@@ -70,3 +70,13 @@ function createHabit() {
         //exibir modal 
     })
 }
+
+//createHabit()
+
+function showMore() {
+    const btnShowMore = document.getElementsByClassName('btn_showMore')[0] 
+    btnShowMore.addEventListener('click', (e) => {
+        habitsTable.style.overflow = 'visible'
+    })
+
+}
