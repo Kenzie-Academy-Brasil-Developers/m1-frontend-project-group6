@@ -59,3 +59,14 @@ function userMenu() {
         //exibir modal 
     })
 }
+
+//userMenu()
+
+function createHabit() {
+    //const menu = document.
+
+    const btnCreate = document.getElementsByClassName('btn_create')[0] 
+    btnCreate.addEventListener('click', (e) => {
+        //exibir modal 
+    })
+}
