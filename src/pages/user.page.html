@@ -17,13 +17,71 @@
     <link rel="stylesheet" href="src/css/base.css">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/user.style.css">
+    
 </head>
 
 <body>
 
-    <h1 class="h1">Página do usuário :)</h1>
+    <header>
 
+        <h1>KenzieHabit</h1>
+
+        <img class="header_userImage" src="">
+
+    </header>
+
+    <section class="section_userInfo"> 
+
+        <img class="section_userInfo_image" src="">
+
+        <h2 class="section_userInfo_name"></h2>
+
+    </section>
+
+    <main>
+
+        <section class="section_habits">
+
+            <h2 class="section_habits_title">Tarefas</h2>
+
+            <nav>
+
+                <button class="btnFilter_all">Todos</button>
+                <button class="btnFilter_concluded">Concluídos</button>
+                <button class="btnCreate">Criar</button>
+
+            </nav>
+
+        </section>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th class="th_status" scope="col">Status</th>
+                    <th class="th_title" scope="col">Título</th>
+                    <th class="th_description" scope="col">Descrição</th>
+                    <th class="th_category" scope="col">Categoria</th>
+                    <th class="th_edit" scope="col">Editar</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+        <button class="btnShowMore">Carregar mais</button>
+
+    </main>
+    
     <script type="module" src="/src/js/controllers/user.controller.js"></script>
+
 </body>
 
 </html>
