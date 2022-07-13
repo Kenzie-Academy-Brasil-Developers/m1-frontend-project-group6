@@ -1,0 +1,23 @@
+<svg 
+    title="editDots"
+    width="27" 
+    height="7" 
+    viewBox="0 0 27 7" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg">
+<circle 
+    cx="3.8877" 
+    cy="3.5" 
+    r="3" 
+    fill="#ADB5BD"/>
+<circle 
+    cx="13.8877" 
+    cy="3.5" 
+    r="3" 
+    fill="#ADB5BD"/>
+<circle 
+    cx="23.8877" 
+    cy="3.5" 
+    r="3" 
+    fill="#ADB5BD"/>
+</svg>
