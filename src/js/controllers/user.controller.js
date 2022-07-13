@@ -79,3 +79,5 @@ function showMore() {
         habitsTable.style.overflow = 'visible'
     })
 }
+
+showMore()
