@@ -19,6 +19,6 @@ btnLogin.addEventListener('click', async (e) => {
     }
 
     else {
-        window.location.assign('/src/pages/user.page.html')
+        window.location.href += 'src/pages/user.page.html'
     }
 })
