@@ -15,3 +15,18 @@ async function defineProfileInfo() {
 
 defineProfileInfo()
 
+const data          = await Api.readAllUserHabits()
+const dataConcluded = data.filter(habit => habit.habit_status === true)
+
+const habitsTable = document.querySelector('tbody')
+
+function showHabits(data) {
+    data.forEach(habit => {
+        const newHabit = //new Habit .method(habit)
+
+        habitsTable.appendChild(newHabit)
+    });
+}
+
+//showHabits(data)
+
