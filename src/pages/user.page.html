@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KenzieHabit</title>
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
 
         <img class="section_userInfo_image" src="">
 
-        <h2 class="section_userInfo_name"></h2>
+        <h2 class="section_userInfo_name">fgfgfg</h2>
 
     </section>
 
@@ -47,9 +47,9 @@
 
             <nav>
 
-                <button class="btnFilter_all">Todos</button>
-                <button class="btnFilter_concluded">Concluídos</button>
-                <button class="btnCreate">Criar</button>
+                <button class="btn_filter_all">Todos</button>
+                <button class="btn_filter_concluded">Concluídos</button>
+                <button class="btn_create">Criar</button>
 
             </nav>
 
@@ -72,14 +72,52 @@
             </thead>
 
             <tbody>
+ <!-- criar de maneira dinamica-->
+                <tr>
 
+                    <td class="habit_status">
+                        <button class="btn_selectHabit"></button>
+                    </td>
+
+                    <td class="habit_title">oi</td>
+                    <td class="habit_description">oi</td>
+                    <td class="habit_category">oi</td>
+
+                    <td class="habit_edit">
+                        <img src="" alt="">
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="habit_status">
+                        <button class="btn_selectHabit"></button>
+                    </td>
+
+                    <td class="habit_title">oi</td>
+                    <td class="habit_description">oi</td>
+
+                    <td class="habit_category"> 
+                          <span>Tag</span>
+                    </td>
+
+                    <td class="habit_edit">
+                        <img src="" alt="">
+                    </td>
+
+                </tr>
+                
+<!-- criar de maneira dinamica-->
             </tbody>
 
         </table>
 
-        <button class="btnShowMore">Carregar mais</button>
+        <button class="btn_showMore">Carregar mais</button>
 
     </main>
+    
+   <footer></footer>
 
     <div class="edit_habit_modal">
         <div class="inner_edit_habit_modal">
@@ -119,9 +157,47 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal_createHabit">
 
+        <div class="createHabit_inner">
+
+            <h2>Criar Hábito</h2>
+            <p>X</p>
+
+        </div>
+
+        <form action="" class="createHabit_form">
+
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title" placeholder="Digitar título">
+
+            <label for="description">Descrição</label>
+            <input type="text" name="description" id="description" placeholder="Digitar descrição">
+
+            <label for="category">Categoria</label>
+            <input list="list" name="category" id="category" placeholder="Selecionar categoria">
+                <datalist id="category">
+                    <option value="">Casa</option>
+                    <option value="">Estudo</option>
+                    <option value="">Lazer</option>
+                    <option value="">Trabalho</option>
+                    <option value="">Saúde</option>
+                </datalist>
+
+                <button type="button">Inserir</button>
+        </form>
+
+    </div>
+    
+    <!-- <div class="loginForm_inputs_password">
+
+    <label for="password">Senha</label>
+    <input type="password" id="password" name="password" placeholder="Digitar minha senha" required>
+
+  </div> -->
+  
     <script type="module" src="/src/js/controllers/user.controller.js"></script>
 
 </body>
-
 </html>
