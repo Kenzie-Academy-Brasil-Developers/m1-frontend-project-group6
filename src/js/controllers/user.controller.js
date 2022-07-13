@@ -54,7 +54,7 @@ filters()
 function userMenu() {
     //const menu = document.
 
-    const sectionUserImage = document.getElementsByClassName('section_userInfo_image')[0] 
+    const sectionUserImage = document.getElementsByClassName('header_userImage')[0] 
     sectionUserImage.addEventListener('click', (e) => {
         //exibir modal 
     })

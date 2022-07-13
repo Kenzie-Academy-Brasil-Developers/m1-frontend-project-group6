@@ -33,6 +33,7 @@ header h1 {
     border-radius: 50%;
 }
 
+
 .section_userInfo {
     gap:              1.375rem;
     width:            100%;
@@ -103,12 +104,20 @@ nav {
     justify-content: space-between;
 }
 
+button:hover, .header_userImage:hover {
+    cursor: pointer;
+}
+
 nav button {
     color:            rgba(var(--color-grey2), 1);
     border:           none;
     font-size:        1rem;
     font-weight:      500;
     background-color: unset;
+}
+
+nav button:hover {
+    color: rgba(var(--color-grey3), 1);
 }
 
 .btn_create {
@@ -120,6 +129,11 @@ nav button {
     font-weight:      600;
     border-radius:    .25rem;
     background-color: rgba(var(--color-blue), 1);
+}
+
+.btn_create:hover {
+    color:            rgba(var(--color-grey6), 1);
+    background-color: rgba(var(--color-blue-dark), 1);
 }
 
 table {
@@ -174,6 +188,10 @@ tbody tr {
     justify-content: space-between;
 }
 
+tbody tr:hover {
+    background-color: rgba(var(--color-grey6), 1);
+}
+
 td {
     width:           20%;
     height:          100%;
@@ -194,7 +212,6 @@ td {
     border:           solid 2px rgba(var(--color-grey3), 1);
     border-radius:    2px;
     background-color: unset;
-
 }
 
 .habit_title {
@@ -328,5 +345,9 @@ td {
         font-weight:       600;
         border-radius:     .25rem;
         background-color:  rgba(var(--color-blue), 1);
+    }
+
+    .btn_showMore:hover {
+        background-color: rgba(var(--color-blue-dark), 1);
     }
 }
