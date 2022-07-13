@@ -41,7 +41,7 @@ header h1 {
     padding:          1rem 1.25rem 3rem 1.25rem;
     min-height:       96px;
     align-items:      flex-start;
-    margin-bottom:    3.125rem;
+    margin-bottom:    8vh;
     justify-content:  flex-start;
     background-color: rgba(var(--color-blue-dark), 1);
 }
@@ -89,7 +89,7 @@ main {
 .section_habits_title {
     color:       black;
     width:       100%;
-    padding:     0 .9375rem;
+    padding:     0.5rem .9375rem;
     font-size:   1.25rem;
     text-align:  left;
     font-weight: 600;    
@@ -126,7 +126,7 @@ table {
     gap:            20px;
     width:          100%;
     display:        flex;
-    min-height:     100px;
+    min-height:     fit-content;
     border-bottom:  2px solid rgba(var(--color-grey4), 1);
     flex-direction: column;
 }
@@ -160,6 +160,9 @@ thead tr th {
 .th_edit {
     text-align:    right;
     padding-right: .5313rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 tbody tr {
@@ -205,4 +208,119 @@ td {
 .habit_edit {
    padding-right:   .9375rem;
    justify-content: right;
+}
+
+@media (min-width: 769px) {
+
+    header {
+       padding: 0 10% ;
+    }
+
+    .section_userInfo {
+        padding:     0 10%;
+        align-items: center;
+    }
+
+    main {
+        padding:   0 10%;
+        max-width: none;
+    }
+
+    .section_habits {
+        flex-direction: row;
+    }
+
+    .section_habits_title {
+        padding: 0;
+    }
+
+    nav {
+        padding:   0;
+        max-width: 345px;
+    }
+
+    table {
+        margin:        5vh 0 12vh 0 ;
+        border:        2px solid rgba(var(--color-grey4), 1);
+        height:        667;  
+        max-height:    667px;
+        border-radius: .25rem;
+    }
+
+    thead tr th {
+        width: 8%
+    }
+
+    .th_title {
+        width: 40%;
+    }
+    
+    .th_description {
+        width: 30%;
+    }
+
+    .th_category {
+        width: 12%;
+    }
+
+    .th_edit {
+        text-align:    right;
+        padding-right: 0;
+    }
+
+    .th_description, .habit_description, .habit_category, .th_category, .btn_showMore {
+        display:  flex;
+        position: relative;
+    }
+
+    td {
+        width: 8%;
+    }
+
+    .habit_title {
+        width: 40%;
+    }
+    
+    .habit_description {
+        color:       rgba(var(--color-grey2), 1);
+        width:       30%;
+        overflow:    hidden;
+        font-size:   1rem;
+        font-weight: 500; 
+    }
+
+    .habit_category {
+        width:       12%;
+        display:     flex;
+        align-items: flex-start;
+    }
+
+    .habit_category span {
+        color:            rgba(var(--color-blue), 1);
+        width:            fit-content;
+        padding:          5px 10px;
+        font-size:        .875rem;
+        font-weight:      500;
+        border-radius:    0.25rem;
+        background-color: rgba(var(--color-blue-light), 1);
+    }
+
+    .habit_edit {
+        padding:         0;
+        justify-content: center;
+    }
+
+    .habit_edit img {
+        width:  26px;
+        height: 6px;
+    }
+
+    .btn_showMore {
+        color:             rgba(var(--color-grey6), 1);
+        padding:           10px 28px;
+        font-size:         .875rem;
+        font-weight:       600;
+        border-radius:     .25rem;
+        background-color:  rgba(var(--color-blue), 1);
+    }
 }
