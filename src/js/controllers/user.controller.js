@@ -1,3 +1,17 @@
-// script da página de tarefas/hábitos do usuário
+import { Api } from './Api.controller.js'
 
-console.log('olá, mundo!')
+async function defineProfileInfo() {
+    const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user')) 
+
+    const headerUserImage  = document.getElementsByClassName('header_userImage')[0]
+    const sectionUserImage = document.getElementsByClassName('section_userInfo_image')[0]
+    const sectionUserName  = document.getElementsByClassName('section_userInfo_name')[0]
+
+    headerUserImage.src       = userInfo.usr_image
+    sectionUserImage.src      = userInfo.usr_image
+    sectionUserName.innerText = userInfo.usr_name
+
+}
+
+defineProfileInfo()
+
