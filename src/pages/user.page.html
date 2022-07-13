@@ -80,9 +80,51 @@
         <button class="btnShowMore">Carregar mais</button>
 
     </main>
+
+    <footer></footer>
+
+    <div class="modal_createHabit">
+
+        <div class="createHabit_inner">
+
+            <h2>Criar Hábito</h2>
+            <p>X</p>
+
+        </div>
+
+        <form action="" class="createHabit_form">
+
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title" placeholder="Digitar título">
+
+            <label for="description">Descrição</label>
+            <input type="text" name="description" id="description" placeholder="Digitar descrição">
+
+            <label for="category">Categoria</label>
+            <input list="list" name="category" id="category" placeholder="Selecionar categoria">
+                <datalist id="category">
+                    <option value="">Casa</option>
+                    <option value="">Estudo</option>
+                    <option value="">Lazer</option>
+                    <option value="">Trabalho</option>
+                    <option value="">Saúde</option>
+                </datalist>
+
+                <button type="button">Inserir</button>
+        </form>
+
+    </div>
+
     
     <script type="module" src="/src/js/controllers/user.controller.js"></script>
 
 </body>
 
 </html>
+
+<!-- <div class="loginForm_inputs_password">
+
+    <label for="password">Senha</label>
+    <input type="password" id="password" name="password" placeholder="Digitar minha senha" required>
+
+  </div> -->
