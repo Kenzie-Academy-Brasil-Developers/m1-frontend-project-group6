@@ -10,7 +10,7 @@ html, body {
 }
 
 header {
-    width:            100%;
+    width:            100vw;
     height:           3.625rem;
     display:          flex;
     padding:          0 1.25rem;
@@ -227,7 +227,8 @@ td {
     }
 
     .section_habits {
-        flex-direction: row;
+        max-width:      1440px;
+        flex-direction: row; 
     }
 
     .section_habits_title {
@@ -243,6 +244,7 @@ td {
         margin:        5vh 0 12vh 0 ;
         border:        2px solid rgba(var(--color-grey4), 1);
         height:        667;  
+        max-width:     1440px;
         max-height:    667px;
         border-radius: .25rem;
     }
