@@ -50,3 +50,12 @@ function filters() {
 }
 
 filters()
+
+function userMenu() {
+    //const menu = document.
+
+    const sectionUserImage = document.getElementsByClassName('section_userInfo_image')[0] 
+    sectionUserImage.addEventListener('click', (e) => {
+        //exibir modal 
+    })
+}
