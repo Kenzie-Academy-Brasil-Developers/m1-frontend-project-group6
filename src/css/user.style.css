@@ -930,7 +930,7 @@ td {
 /* Estilização modal hábito criado com Sucesso!  */
 
 .modal_success{
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     width: 100vw;
