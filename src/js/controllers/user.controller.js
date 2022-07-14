@@ -18,7 +18,7 @@ user_log.addEventListener("click",() => {
 
     localStorage.clear() 
 
-    location.href="../../index.html"
+    location.href = "../../index.html"
 
 })
 
@@ -42,18 +42,18 @@ checkToken()
 async function defineProfileInfo() {
     const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user'))
 
-    const headerUserImage = document.getElementsByClassName('header_userImage')[0]
+    const headerUserImage  = document.getElementsByClassName('header_userImage')[0]
     const sectionUserImage = document.getElementsByClassName('section_userInfo_image')[0]
-    const sectionUserName = document.getElementsByClassName('section_userInfo_name')[0]
+    const sectionUserName  = document.getElementsByClassName('section_userInfo_name')[0]
 
-    headerUserImage.src = userInfo.usr_image
-    sectionUserImage.src = userInfo.usr_image
+    headerUserImage.src       = userInfo.usr_image
+    sectionUserImage.src      = userInfo.usr_image
     sectionUserName.innerText = userInfo.usr_name
 }
 
 defineProfileInfo()
 
-const allData = await Api.readAllUserHabits()
+const allData     = await Api.readAllUserHabits()
 const allDataSort = allData.sort((a, b) => b.habit_id - a.habit_id)
 
 async function showHabits(data) {
@@ -73,7 +73,7 @@ showHabits(allDataSort)
 
 async function filters() {
 
-    const btnFilterAll = document.getElementsByClassName('btn_filter_all')[0]
+    const btnFilterAll       = document.getElementsByClassName('btn_filter_all')[0]
     const btnFilterConcluded = document.getElementsByClassName('btn_filter_concluded')[0]
 
     btnFilterAll.addEventListener('click', (e) => {
@@ -90,29 +90,6 @@ async function filters() {
 }
 
 filters()
-
-function userMenu() {
-    //const menu = document.
-
-    const sectionUserImage = document.getElementsByClassName('header_userImage')[0]
-    sectionUserImage.addEventListener('click', (e) => {
-        //exibir modal 
-    })
-}
-
-//userMenu()
-
-function logout() {
-    const btnLogout = document.getElementsByClassName('btn_logout')[0]
-    btnLogout.addEventListener('click', () => {
-        localStorage.removeItem('@Kenzie-Habit-M2:token')
-        localStorage.removeItem('@Kenzie-Habit-M2:user')
-
-        window.location.assign('index.html')
-    })
-}
-
-logout()
 
 function createHabit() {
     const closeCreateHabitMenu = document.querySelector('.createHabit_innerButton')
@@ -313,6 +290,11 @@ async function requestApiToEditHabit() {
 
             const modalDeleteHabit = document.querySelector('.modal_exclude')
             modalDeleteHabit.style.display = 'none'
+            
+            const allHabits     = await Api.readAllUserHabits()
+            const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
+            showHabits(allHabitsSort)
+
             console.log(apiResponse)
 
             const allDataa = await Api.readAllUserHabits()

@@ -13,47 +13,42 @@ export class Habit {
 
         if (this.status == true) {
 
-            const tr = document.createElement('tr')
-
-            const status = document.createElement('td')
-            const btnSelect = document.createElement('button')
-
-            const title = document.createElement('td')
+            const tr          = document.createElement('tr')
+            const status      = document.createElement('td')
+            const btnSelect   = document.createElement('button')
+            const title       = document.createElement('td')
             const description = document.createElement('td')
+            const category    = document.createElement('td')
+            const spanCateg   = document.createElement('span')
+            const edit        = document.createElement('td')
+            const editImg     = document.createElement('img')
+            const imgCheck    = document.createElement('img')
 
-            const category = document.createElement('td')
-            const spanCateg = document.createElement('span')
-
-            const edit = document.createElement('td')
-            const editImg = document.createElement('img')
-
-            tr.id = this.id
+            tr.id        = this.id
+            editImg.id   = this.id
+            btnSelect.id = 'concluded'
 
             status.classList.add('habit_status', `status:${this.id}`)
             title.classList.add('habit_title', `title:${this.id}`)
             description.classList.add('habit_description', `description:${this.id}`)
             category.classList.add('habit_category', `category:${this.id}`)
             edit.classList.add('habit_edit')
+            btnSelect.classList.add('btn_selectHabit-Concluded')
 
-            title.innerText = this.title
+            title.innerText       = this.title
             description.innerText = this.description
-            spanCateg.innerText = this.category
+            spanCateg.innerText   = this.category
 
-            editImg.src = 'src/assets/img/editDots.svg'
-            editImg.classList.add(`${this.id}`)
-
-            const imgCheck = document.createElement('img')
+            editImg.src  = 'src/assets/img/editDots.svg'
             imgCheck.src = 'src/assets/img/checkSignal.svg'
 
-            btnSelect.id = 'concluded'
-            btnSelect.classList.add('btn_selectHabit-Concluded')
             btnSelect.appendChild(imgCheck)
 
-            tr.style.backgroundColor = '#F1F3F5'
-
+            tr.style.backgroundColor   = '#F1F3F5'
             title.style.textDecoration = 'line-through'
 
             editImg.addEventListener('click', async (e) => {
+
                 const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
                 menuEdit.style.display = 'flex'
 
@@ -140,6 +135,7 @@ export class Habit {
 
             const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
             closeEditHabitModal.addEventListener('click', (e) => {
+
                 const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
                 menuEdit.style.display = 'none'
 
@@ -151,6 +147,7 @@ export class Habit {
 
             const closeCreateHabitModal = document.querySelector('.createHabit_innerButton')
             closeCreateHabitModal.addEventListener('click', (e) => {
+
                 const menuCreate = document.querySelector('.modal')
                 menuCreate.style.display = 'none'
             })
@@ -165,21 +162,19 @@ export class Habit {
 
         else {
 
-            const tr = document.createElement('tr')
-
-            const status = document.createElement('td')
-            const btnSelect = document.createElement('button')
-
-            const title = document.createElement('td')
+            const tr          = document.createElement('tr')
+            const status      = document.createElement('td')
+            const btnSelect   = document.createElement('button')
+            const title       = document.createElement('td')
             const description = document.createElement('td')
+            const category    = document.createElement('td')
+            const spanCateg   = document.createElement('span')
+            const edit        = document.createElement('td')
+            const editImg     = document.createElement('img')
+            const imgCheck    = document.createElement('img')
 
-            const category = document.createElement('td')
-            const spanCateg = document.createElement('span')
-
-            const edit = document.createElement('td')
-            const editImg = document.createElement('img')
-
-            tr.id = this.id
+            tr.id      = this.id
+            editImg.id = this.id
 
             status.classList.add('habit_status', `status:${this.id}`)
             btnSelect.classList.add('btn_selectHabit')
@@ -187,15 +182,12 @@ export class Habit {
             description.classList.add('habit_description', `description:${this.id}`)
             category.classList.add('habit_category', `category:${this.id}`)
             edit.classList.add('habit_edit')
-
-            title.innerText = this.title
+            
+            title.innerText       = this.title
             description.innerText = this.description
-            spanCateg.innerText = this.category
+            spanCateg.innerText   = this.category
 
             editImg.src = 'src/assets/img/editDots.svg'
-            editImg.classList.add(`${this.id}`)
-
-            const imgCheck = document.createElement('img')
             imgCheck.src = 'src/assets/img/checkSignal.svg'
 
             btnSelect.addEventListener('click', async (e) => {
@@ -217,6 +209,7 @@ export class Habit {
             })
 
             editImg.addEventListener('click', async (e) => {
+
                 const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
                 menuEdit.style.display = 'flex'
 
