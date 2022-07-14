@@ -1,4 +1,5 @@
 import { Api } from './Api.controller.js'
+import { Habit } from '../models/Habit.model.js'
 
 async function defineProfileInfo() {
     const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user')) 
@@ -22,13 +23,13 @@ const habitsTable = document.querySelector('tbody')
 
 function showHabits(data) {
     data.forEach(habit => {
-        const newHabit = //new Habit .method(habit)
+        const newHabit = new Habit(habit.habit_id, habit.habit_title, habit.habit_description, habit.habit_category, habit.habit_status,).createTemplate()
 
         habitsTable.appendChild(newHabit)
     });
 }
 
-//showHabits(data)
+showHabits(data)
 
 function filters() {
     const filterBtns = document.querySelector('nav')
