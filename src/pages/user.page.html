@@ -133,7 +133,7 @@
                 <div class="createHabit_inner">
 
                     <div class="createHabit_innerTitle">Criar Hábito</div>
-                    <button class="createHabit_innerButton" type="button">X</button>
+                    <button class="createHabit_innerButton" type="button"><img src="/src/assets/img/x-close.svg" alt=""></button>
 
                 </div>
 
@@ -151,17 +151,17 @@
 
                     <div class="createHabit_category">
                         <label for="create_habit_category">Categoria</label>
-                        <select name="" id="category">
-                            <option value="">Casa</option>
-                            <option value="">Estudo</option>
-                            <option value="">Lazer</option>
-                            <option value="">Trabalho</option>
-                            <option value="">Saúde</option>
+                        <select name="" id="category" class="create_habit_category">
+                            <option value="casa">Casa</option>
+                            <option value="estudos">Estudo</option>
+                            <option value="lazer">Lazer</option>
+                            <option value="trabalho">Trabalho</option>
+                            <option value="saude">Saúde</option>
                         </select>
                     </div>
 
                     <div class="button_insert">
-                        <button type="button">Inserir</button>
+                        <button type="button" id="create_habit_btn">Inserir</button>
                     </div>
 
                 </form>

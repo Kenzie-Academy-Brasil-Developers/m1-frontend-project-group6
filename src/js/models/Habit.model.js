@@ -55,6 +55,22 @@ export class Habit {
                 menuEdit.style.display = 'flex'
             })
 
+            // adding eventlistener to close edit modal: 
+
+            const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
+            closeEditHabitModal.addEventListener('click', (e) => {
+                const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
+                menuEdit.style.display = 'none'
+            })
+
+            // adding eventlistener to close edit modal: 
+
+            const closeCreateHabitModal = document.querySelector('.createHabit_innerButton')
+            closeCreateHabitModal.addEventListener('click', (e) => {
+                const menuCreate = document.querySelector('.modal')
+                menuCreate.style.display = 'none'
+            })
+
             status.appendChild(btnSelect)
             category.appendChild(spanCateg)
             edit.appendChild(editImg)
