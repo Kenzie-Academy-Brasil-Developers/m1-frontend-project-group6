@@ -162,6 +162,9 @@ async function requestApiToEditHabit() {
 
         console.log(habitId)
 
+        const editHabitButton = document.querySelector('#save_changes_habit_button')
+        editHabitButton.classList.remove(`${editHabitButton.classList[0]}`)
+
         const apiResponse = await Api.updateHabit(data, habitId)
         if (apiResponse.habit_id) {
 
@@ -174,12 +177,21 @@ async function requestApiToEditHabit() {
         const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
         showHabits(allHabitsSort)
     })
+
+    const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
+    closeEditHabitModal.addEventListener('click', (e) => {
+
+        e.preventDefault()
+
+        const editHabitButton = document.querySelector('#save_changes_habit_button')
+        editHabitButton.classList.remove(`${editHabitButton.classList[0]}`)
+
+    })
 }
 
 requestApiToEditHabit()
 
 showMore()
-
 
 // função para adicionar e remover os valores a serem editados no modal de editar hábito:
 
