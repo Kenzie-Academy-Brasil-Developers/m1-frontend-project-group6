@@ -2,4 +2,127 @@
 body {
     font-family: var(--font-base);
     color: rgba(var(--color-blue), 1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Estilização Modal Hábito */
+
+.modal{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+
+}
+
+.container_createHabit{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 32rem;
+    height: 31rem;
+    padding: 38px 32px 32px 38px;
+    align-self: center;
+
+}
+
+.createHabit_inner{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.createHabit_innerTitle{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(var(--color-grey1), 1);
+}
+
+.createHabit_innerButton{
+    background-color: #FFFFFF;
+    color:rgba(var(--color-grey3), 1);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.createHabit_form{
+    color: rgba(var(--color-grey2), 1);
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.createHabit_form input{
+    background-color: rgba(var(--color-grey5), 1);
+    border: 2px solid rgba(var(--color-grey5), 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+}
+
+.createHabit_title{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem ;
+}
+
+.createHabit_title input{
+    width: 27rem;
+    height: 2.5rem;
+}
+
+.createHabit_description{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.createHabit_description textarea{
+    max-width: 27rem;
+    max-height: 5rem;
+    text-align: initial;
+    background-color: rgba(var(--color-grey5), 1);
+    border: 2px solid rgba(var(--color-grey5), 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    font-family: var(--font-base)
+}
+
+.createHabit_category{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem ;
+}
+
+.createHabit_category select{
+    width: 27rem;
+    height: 2.5rem;
+    background-color: rgba(var(--color-grey5), 1);
+    border: 2px solid rgba(var(--color-grey5), 1);
+    border-radius: 4px;
+    color: rgba(var(--color-grey2), 1);
+    padding-left: 0.5rem;
+}
+
+.button_insert button{
+    margin-top: 2rem ;
+    width: 27rem;
+    height: 2.5rem;
+    background-color: rgba(var(--color-blue), 1);  
+    border: 2px solid rgba(var(--color-blue), 1);
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1rem;
 }
