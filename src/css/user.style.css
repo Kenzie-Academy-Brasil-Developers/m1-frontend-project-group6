@@ -362,10 +362,10 @@ header h1 {
     width:           fit-content;
     height:          3.75rem;
     display:         flex;
-    max-width:       11.875rem;
+    max-width:       max-content;
     font-size:       1.25rem;
     font-weight:     600;
-    align-items:     flex-start;
+    align-items:     center;
     overflow-wrap:   break-word;
     justify-content: center;
 }
