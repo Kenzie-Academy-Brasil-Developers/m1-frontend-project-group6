@@ -117,7 +117,7 @@
 
     </main>
     
-   <footer></footer>
+    <footer></footer>
 
     <div class="edit_habit_modal">
         <div class="inner_edit_habit_modal">
@@ -158,39 +158,55 @@
         </div>
     </div>
     
-    <div class="modal_createHabit">
+    <div class="modal">
 
-        <div class="createHabit_inner">
+        <div class="container_createHabit">
 
-            <h2>Criar Hábito</h2>
-            <p>X</p>
-
+            <div class="modal_createHabit">
+        
+                <div class="createHabit_inner">
+        
+                    <div class="createHabit_innerTitle">Criar Hábito</div>
+                    <button class="createHabit_innerButton" type="button">X</button>
+        
+                </div>
+        
+                <form action="" class="createHabit_form" >
+                    
+                    <div class="createHabit_title">
+                        <label for="title">Título</label>
+                        <input type="text" name="title" id="title" placeholder="Digitar título">
+                    </div>
+        
+                    <div class="createHabit_description">
+                        <label for="description">Descrição</label>
+                        <textarea name="" id="create_habit_description" placeholder="Digitar descrição"></textarea>
+                    </div>
+        
+                    <div class="createHabit_category">
+                        <label for="create_habit_category">Categoria</label>
+                        <select name="" id="category">
+                            <option value="">Casa</option>
+                            <option value="">Estudo</option>
+                            <option value="">Lazer</option>
+                            <option value="">Trabalho</option>
+                            <option value="">Saúde</option>
+                        </select>
+                    </div>
+                    
+                    <div class="button_insert">
+                        <button type="button">Inserir</button>
+                    </div>
+        
+                </form>
+        
+            </div>
+    
         </div>
 
-        <form action="" class="createHabit_form">
-
-            <label for="title">Título</label>
-            <input type="text" name="title" id="title" placeholder="Digitar título">
-
-            <label for="description">Descrição</label>
-            <input type="text" name="description" id="description" placeholder="Digitar descrição">
-
-            <label for="category">Categoria</label>
-            <input list="list" name="category" id="category" placeholder="Selecionar categoria">
-                <datalist id="category">
-                    <option value="">Casa</option>
-                    <option value="">Estudo</option>
-                    <option value="">Lazer</option>
-                    <option value="">Trabalho</option>
-                    <option value="">Saúde</option>
-                </datalist>
-
-                <button type="button">Inserir</button>
-        </form>
-
     </div>
-    
-    <script type="module" src="src/js/controllers/user.controller.js"></script>
+
+    <script type="module" src="/src/js/controllers/user.controller.js"></script>
 
 </body>
 
