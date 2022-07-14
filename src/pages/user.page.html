@@ -29,7 +29,15 @@
 
         <h1>KenzieHabit</h1>
 
-        <img class="header_userImage" src="">
+        <div class="header_div">
+
+            <img class="header_userImage" src="">
+
+            <button class="btn_logout">
+                <img src="/src/assets/img/logout.svg">
+            </button>
+
+        </div>
 
         <div class="profile_actions">
             <div class="profile_actions_settings">
@@ -95,7 +103,18 @@
 
     </main>
 
-    <footer></footer>
+    <div class="modal_noAccess"> 
+
+        <div class="modal_noAccess_inner">
+            
+            <h1>Opa! Acesso Negado :(</h1>
+            <p>Faça o login para continuar</p>
+
+            <button class="btn_login">Login</button>
+
+        </div>
+        
+    </div>
 
     <div class="edit_habit_modal">
         <div class="inner_edit_habit_modal">
@@ -187,12 +206,12 @@
         <div class="modal_exclude_container">
             <div class="modal_exclude_title">
                 <h2>Excluir hábito</h2>
-                <button id="close_edit_modal_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
+                <button id="close_exclude_habit_modal_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
             </div>
             <div class="modal_exclude_question">Tem certeza que deseja excluir este hábito?</div>
             <div class="modal_exclude_alert">Após executar essa ação não será possível desfazer</div>
             <div class="modal_exclude_buttons">
-                <git id="cancel_action_button" name="cancel_action_button">Cancelar</git button>
+                <button id="cancel_action_button" name="cancel_action_button">Cancelar</button>
                 <button id="confirm_action_button" name="confirm_action_button">Sim, excluir este hábito</button>
             </div>
         </div>
@@ -220,6 +239,20 @@
         </div>
     </div>
 
+
+    <div class="modal_success">
+        <div class="modal_success_container">
+            <div class="modal_success_left">
+                <div class="modal_success_circle">
+                    <img src="/src/assets/img/checkSignal.svg" alt="">
+                </div>
+            </div>
+            <div class="modal_success_right">
+                <h2>Sucesso!</h2>
+                <h3>Seu hábito foi criado</h3>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="/src/js/controllers/user.controller.js"></script>
 

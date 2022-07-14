@@ -208,6 +208,9 @@ export class Habit {
 
                 editHabitButton.classList.add(`${habitId}`)
 
+                const confirmDeletion = document.querySelector('#confirm_action_button')
+                confirmDeletion.classList.add(`${habitId}`)
+
             })
 
             status.appendChild(btnSelect)
