@@ -22,7 +22,7 @@ body {
 }
 
 .container_createHabit{
-    background-color: #FFFFFF;
+    background-color: rgba(var(--color-white), 1);
     border-radius: 8px;
     width: 32rem;
     height: 31rem;
@@ -44,7 +44,7 @@ body {
 }
 
 .createHabit_innerButton{
-    background-color: #FFFFFF;
+    background-color: rgba(var(--color-white), 1);
     color:rgba(var(--color-grey3), 1);
     font-weight: 600;
     font-size: 1.25rem;
@@ -119,7 +119,7 @@ body {
     background-color: rgba(var(--color-blue), 1);  
     border: 2px solid rgba(var(--color-blue), 1);
     border-radius: 4px;
-    color: #FFFFFF;
+    color: rgba(var(--color-white), 1);
     font-weight: 600;
     font-size: 1rem;
 }
@@ -756,12 +756,102 @@ td {
     background-color: rgba(var(--color-red), 1);
     border: 2px solid rgba(var(--color-red), 1);
     border-radius: 4px;
-    color: #FFFFFF;
+    color: rgba(var(--color-white), 1);
     width: 14.6rem;
     height: 2.5rem;
     cursor: pointer;
 }
 
-    
+/* Estilização Modal Editar Perfil */
 
+.modal_edit_profile{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
 
+.edit_profile_container{
+    background-color: rgba(var(--color-white), 1);
+    border-radius: 8px;
+    width: 32rem;
+    height: 21rem;
+    padding: 38px 32px 32px 38px;
+    align-self: center;
+    color: #000000;
+}
+
+.edit_profile_title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit_profile_title h2{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(var(--color-grey1), 1);
+}
+
+.edit_profile_title button{
+    background-color: rgba(var(--color-white), 1);
+    cursor: pointer;
+}
+
+.edit_profile_name{
+    display: flex;
+    flex-direction: column;
+    color: rgba(var(--color-grey2), 2);
+    font-weight: 400;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.edit_profile_name input{
+    background-color: rgba(var(--color-grey5), 1);
+    font-weight: 400;
+    font-size: 0.85rem;;
+    border: 2px solid rgba(var(--color-grey5), 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    width: 27.4rem;
+    height: 2.5rem;
+}
+
+.edit_profile_url{
+    display: flex;
+    flex-direction: column;
+    color: rgba(var(--color-grey2), 1);
+    font-weight: 400;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.edit_profile_url input{
+    background-color: rgba(var(--color-grey5), 1);
+    border: 2px solid rgba(var(--color-grey5), 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    width: 27.4rem;
+    height: 2.5rem;
+}
+
+#edit_profile_save_button{
+    background-color: rgba(var(--color-blue), 1);
+    border: 2px solid gba(var(--color-blue), 1);
+    border-radius: 4px;
+    color: rgba(var(--color-white), 1);
+    width: 27.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
