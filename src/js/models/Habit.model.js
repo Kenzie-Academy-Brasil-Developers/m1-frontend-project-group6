@@ -86,7 +86,50 @@ export class Habit {
 
                 editHabitButton.classList.add(`${habitId}`)
 
+                const confirmDeletion = document.querySelector('#confirm_action_button')
+                confirmDeletion.classList.add(`${habitId}`)
+
             })
+
+            // editImg.addEventListener('click', async (e) => {
+            //     const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
+            //     menuEdit.style.display = 'flex'
+
+            //     const editHabitButton = document.querySelector('#save_changes_habit_button')
+
+            //     const element = e.target
+            //     console.log(element)
+
+            //     const habitId = element.classList[0]
+            //     console.log(habitId)
+
+            //     const title = document.getElementsByClassName(`title:${habitId}`)[0].innerText
+            //     console.log(title)
+
+            //     const editTitle = document.querySelector('#habit_title')
+            //     console.log(editTitle)
+
+            //     editTitle.value = title
+
+            //     const description = document.getElementsByClassName(`description:${habitId}`)[0].innerText
+            //     console.log(description)
+
+            //     const editDescription = document.querySelector("#habit_description")
+            //     console.log(editDescription)
+
+            //     editDescription.value = description
+
+            //     const category = document.getElementsByClassName(`category:${habitId}`)[0].innerText
+            //     console.log(category)
+
+            //     const editCategory = document.querySelector("#habit-category")
+            //     console.log(editCategory)
+
+            //     editCategory.value = category
+
+            //     editHabitButton.classList.add(`${habitId}`)
+
+            // })
 
             // adding eventlistener to close edit modal: 
 
@@ -95,6 +138,9 @@ export class Habit {
 
                 const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
                 menuEdit.style.display = 'none'
+
+                const confirmDeletion = document.querySelector('#confirm_action_button')
+                confirmDeletion.classList = ''
             })
 
             // adding eventlistener to close edit modal: 
