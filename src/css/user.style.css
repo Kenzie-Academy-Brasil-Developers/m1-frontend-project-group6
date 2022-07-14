@@ -6,7 +6,7 @@ body {
     flex-direction: column;
 }
 
-/* Estilização Modal Hábito */
+/* CSS Modal Habit */
 
 .modal{
     display: none;
@@ -123,6 +123,8 @@ body {
     font-weight: 600;
     font-size: 1rem;
 }
+
+/* CSS Modal Edit Habit */
 
 .edit_habit_modal {
     width: 100vw;
@@ -307,6 +309,8 @@ body {
     font-size: 1rem;
 }
 
+/* CSS User Page */
+
 html, body {
     color:          rgba(var(--color-blue), 1);
     width:          100vw;
@@ -336,14 +340,6 @@ header h1 {
     font-weight: 700;
 }
 
-.header_div {
-    width:           8%;
-    display:         flex;
-    min-width:       80px;
-    align-items:     center;
-    justify-content: space-between;
-}
-
 .header_userImage {
     width:         2.5rem;
     height:        2.5rem;
@@ -351,15 +347,6 @@ header h1 {
     border-radius: 50%;
 }
 
-.btn_logout {
-    width:  24px;
-    height: 24px;
-}
-
-.btn_logout img {
-    width:  100%;
-    height: 100%;
-}
 
 .section_userInfo {
     gap:              1.375rem;
@@ -526,7 +513,9 @@ td {
     display:         flex;
     text-align:      left;
     align-items:     center;
-    justify-content: flex-start;   
+    justify-content: flex-start; 
+    word-wrap: unset;
+    
 }
 
 .habit_status {
@@ -764,6 +753,8 @@ td {
     }
 }
 
+/* CSS Modal Exclude Habit */
+
 /* Estilização modal AcessModal */
 
 .modal_noAccess_inner {
@@ -849,7 +840,7 @@ td {
     cursor: pointer;
 }
 
-/* Estilização Modal Editar Perfil */
+/* CSS Modal Edit Profile */
 
 .modal_edit_profile{
     display: none;
@@ -943,6 +934,8 @@ td {
     margin-top: 2rem;
 }
 
+/* CSS Modal "Habit Created Succesfully" */
+
 .profile_actions {
     display: none;
     flex-direction: column;
@@ -982,7 +975,6 @@ td {
     height: 44px;
     background: #FFFFFF;
     cursor: pointer;
-
 }
 
 .profile_actions_settings img {
@@ -1003,7 +995,6 @@ td {
 /* Estilização modal hábito criado com Sucesso!  */
 
 .modal_success{
-    transition: 2s;
     display: none;
     justify-content: center;
     flex-direction: column;
@@ -1019,8 +1010,8 @@ td {
 .modal_success_container{
     display: flex;
     flex-direction: row;
-    background-color:#E6F8EE;
-    border: 2px solid #56CF8E;
+    background-color: #E6F8EE;
+    border: 2px solid rgba(var(--color-green), 1);
     border-radius: 8px;
     width: 28rem;
     height: 7rem;
@@ -1041,7 +1032,7 @@ td {
     width: 3.7rem;
     height: 3.7rem;
     border-radius: 150px;
-    background-color: #56CF8E;
+    background-color: rgba(var(--color-green), 1);
     position: relative;
 }
 
@@ -1062,6 +1053,72 @@ td {
 }
 
 .modal_success_right h3{
+    color: rgba(var(--color-grey2), 1);
+    font-weight: 400;
+    font-size: 1rem; 
+}
+
+/* CSS Modal "Habit Not Created" */
+
+.modal_not_created{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_not_created_container{
+    display: flex;
+    flex-direction: row;
+    background-color: #f7c6c6;
+    border: 2px solid rgba(var(--color-red), 1);
+    border-radius: 8px;
+    width: 28rem;
+    height: 7rem;
+    padding: 38px 32px 32px 38px;
+    align-self: center;
+    color: #000000;
+}
+
+.modal_not_created_left{
+    display: flex;  
+    align-items: center;
+}
+
+.modal_not_created_circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 150px;
+    background-color: rgba(var(--color-red), 1);
+    position: relative;
+}
+
+.modal_not_created_circle img{
+    position: absolute;
+    min-height: 1.9rem;
+}
+
+.modal_not_created_right{
+    margin-left: 1.5rem;
+}
+
+.modal_not_created_right h2{
+    color: rgba(var(--color-grey1), 1);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.modal_not_created_right h3{
     color: rgba(var(--color-grey2), 1);
     font-weight: 400;
     font-size: 1rem; 
