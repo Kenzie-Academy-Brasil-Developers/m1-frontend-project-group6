@@ -1,6 +1,22 @@
 import { Api } from './Api.controller.js'
 import { Habit } from '../models/Habit.model.js'
 
+function checkToken() {
+    const token = localStorage.getItem('@Kenzie-Habit-M2:token')
+
+    const btnLogin = document.getElementsByClassName('btn_login')[0]
+    btnLogin.addEventListener('click', () => {
+        window.location.assign('index.html')
+    })
+
+    if(!token) {
+        const modalNoAccess = document.getElementsByClassName('modal_noAccess')[0]
+        modalNoAccess.style.display = 'flex'
+    }
+}
+
+checkToken()
+
 async function defineProfileInfo() {
     const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user'))
 
