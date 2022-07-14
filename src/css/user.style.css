@@ -288,7 +288,7 @@ nav {
     justify-content: space-between;
 }
 
-button:hover, .header_userImage:hover {
+button:hover, .header_userImage:hover, .habit_edit img:hover {
     cursor: pointer;
 }
 
@@ -324,6 +324,7 @@ table {
     gap:            20px;
     width:          100%;
     display:        flex;
+    max-width:      600px;
     min-height:     fit-content;
     border-bottom:  2px solid rgba(var(--color-grey4), 1);
     flex-direction: column;
@@ -383,6 +384,7 @@ td {
     text-align:      left;
     align-items:     center;
     justify-content: flex-start; 
+    word-wrap: unset;
     
 }
 
@@ -390,7 +392,7 @@ td {
     padding-left: .9375rem;
 }
 
-.btn_selectHabit {
+.btn_selectHabit{
     width:            17px;
     height:           15px;
     border:           solid 2px rgba(var(--color-grey3), 1);
@@ -398,12 +400,35 @@ td {
     background-color: unset;
 }
 
+.btn_selectHabit-Concluded {
+    width:            17px;
+    height:           15px;
+    border:           solid 2px rgba(var(--color-green), 1);
+    display:          flex;
+    align-items:      center;
+    border-radius:    2px;
+    justify-content:  center;
+    background-color: rgba(var(--color-green), 1);
+}
+
+
 .habit_title {
     color:       rgba(var(--color-grey2), 1);
     width:       50%;
     overflow:    hidden;
     font-size:   1rem;
-    font-weight: 500; 
+    font-weight: 500;   
+    white-space: nowrap;
+}
+
+.habit_description {
+    overflow:    hidden;
+    margin-left: 0.75rem;
+    white-space: nowrap;
+}
+
+.habit_category {
+    margin-left: 0.75rem;
 }
 
 .habit_edit {
