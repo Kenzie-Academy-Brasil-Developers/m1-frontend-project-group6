@@ -4,13 +4,87 @@ import { Habit } from '../models/Habit.model.js'
 
 let user_info = document.querySelector(".header_userImage")
 
-user_info.addEventListener("click",() => {
+    user_info.addEventListener("click",() => {
 
     let user_info_event = document.querySelector(".profile_actions")
 
     user_info_event.classList.toggle("show")
 
 })
+
+let user_update = document.querySelector(".profile_actions_settings")
+
+    user_update.addEventListener("click", () => {
+
+    let user_update_settings = document.querySelector(".modal_edit_profile")
+
+    user_update_settings.classList.toggle("show")
+
+    let user_name = document.querySelector(".section_userInfo_name").innerText
+
+    let user_change_input = document.querySelector("#edit_profile_name")
+
+        user_change_input.value = user_name
+
+    })
+
+    let user_close_button = document.querySelector("#close_edit_profile_button")
+
+    user_close_button.addEventListener("click", () => {
+
+    let user_update_status = document.querySelector(".modal_edit_profile")
+
+    user_update_status.classList.toggle("show")
+
+    })
+
+    let save_changes = document.querySelector("#edit_profile_save_button")
+
+    save_changes.addEventListener("click", async () => {
+
+        let user_name = document.querySelector("#edit_profile_name")
+
+        let img_url = document.querySelector("#edit_profile_url")
+
+        const content = {
+
+        }
+
+        if (user_name.value && img_url.value) {
+
+            content.usr_name = user_name.value
+
+            content.usr_image = img_url.value
+
+            await Api.updateProfile(content)
+
+            localStorage.clear() 
+
+            location.href="../../index.html"
+
+        } else if (user_name.value) {
+
+            content.usr_name = user_name.value
+
+            await Api.updateProfile(content)
+
+            localStorage.clear() 
+
+            location.href="../../index.html"
+
+        } else if (img_url.value) {
+
+            content.usr_image = img_url.value
+
+            await Api.updateProfile(content)
+
+             localStorage.clear() 
+
+             location.href="../../index.html"
+
+        }
+
+    })
 
 let user_log = document.querySelector("#user_logout")
 
