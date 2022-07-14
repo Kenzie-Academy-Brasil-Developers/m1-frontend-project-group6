@@ -4,22 +4,21 @@ import { Habit } from '../models/Habit.model.js'
 async function defineProfileInfo() {
     const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user'))
 
-    const headerUserImage = document.getElementsByClassName('header_userImage')[0]
+    const headerUserImage  = document.getElementsByClassName('header_userImage')[0]
     const sectionUserImage = document.getElementsByClassName('section_userInfo_image')[0]
-    const sectionUserName = document.getElementsByClassName('section_userInfo_name')[0]
+    const sectionUserName  = document.getElementsByClassName('section_userInfo_name')[0]
 
-    headerUserImage.src = userInfo.usr_image
-    sectionUserImage.src = userInfo.usr_image
+    headerUserImage.src       = userInfo.usr_image
+    sectionUserImage.src      = userInfo.usr_image
     sectionUserName.innerText = userInfo.usr_name
-
 }
 
 defineProfileInfo()
 
-async function showHabits() {
+const allData     = await Api.readAllUserHabits()
+const allDataSort = allData.sort((a, b) => b.habit_id - a.habit_id)
 
-    const data = await Api.readAllUserHabits()
-    const dataConcluded = data.filter(habit => habit.habit_status === true)
+async function showHabits(data) {
 
     const habitsTable = document.querySelector('tbody')
     habitsTable.innerText = ''
@@ -27,29 +26,28 @@ async function showHabits() {
     data.forEach(habit => {
 
         const newHabit = new Habit(habit.habit_id, habit.habit_title, habit.habit_description, habit.habit_category, habit.habit_status).createTemplate()
-        console.log(newHabit)
+        
         habitsTable.appendChild(newHabit)
-    });
+    })
 }
 
-showHabits()
+showHabits(allDataSort)
 
-function filters() {
-    const filterBtns = document.querySelector('nav')
-    filterBtns.addEventListener('click', (e) => {
-        const element = e.target
+async function filters() {
 
-        if (element.innerText === 'Todos') {
-            habitsTable.innerText = ''
+    const btnFilterAll       = document.getElementsByClassName('btn_filter_all')[0]
+    const btnFilterConcluded = document.getElementsByClassName('btn_filter_concluded')[0]
 
-            showHabits(data)
-        }
+    btnFilterAll.addEventListener('click', (e) => {
 
-        else if (element.innerText === 'Concluídos') {
-            habitsTable.innerText = ''
+        showHabits(allDataSort)
+    })
 
-            showHabits(dataConcluded)
-        }
+    btnFilterConcluded.addEventListener('click', (e) => {
+    
+        const dataConcluded     = allDataSort.filter(habit => habit.habit_status === true)
+        const dataConcludedSort = dataConcluded.sort((a, b) => b.habit_id - a.habit_id)
+        showHabits(dataConcludedSort)
     })
 }
 
@@ -114,9 +112,10 @@ function requestApiToCreateHabit() {
             closeCreateHabitMenu.style.display = 'none'
 
         }
-        showHabits()
-        // window.location.reload()
-        // console.log(apiResponse)
+
+        const allHabits     = await Api.readAllUserHabits()
+        const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
+        showHabits(allHabitsSort)
     })
 
 }
@@ -124,6 +123,8 @@ function requestApiToCreateHabit() {
 requestApiToCreateHabit()
 
 function showMore() {
+    const habitsTable = document.querySelector('tbody')
+
     const btnShowMore = document.getElementsByClassName('btn_showMore')[0]
     btnShowMore.addEventListener('click', (e) => {
         habitsTable.style.overflow = 'visible'
@@ -171,8 +172,10 @@ async function requestApiToEditHabit() {
             closeCreateHabitMenu.style.display = 'none'
 
         }
-        showHabits()
 
+        const allHabits     = await Api.readAllUserHabits()
+        const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
+        showHabits(allHabitsSort)
     })
 
     const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
@@ -184,15 +187,11 @@ async function requestApiToEditHabit() {
         editHabitButton.classList.remove(`${editHabitButton.classList[0]}`)
 
     })
-
-
-
 }
 
 requestApiToEditHabit()
 
 showMore()
-
 
 // função para adicionar e remover os valores a serem editados no modal de editar hábito:
 
