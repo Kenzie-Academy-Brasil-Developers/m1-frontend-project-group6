@@ -684,6 +684,60 @@ td {
     }
 }
 
+/* Estilização modal AcessModal */
+
+.modal_noAccess {
+    top:              0;
+    left:             0;
+    width:            100vw;
+    height:           100vh;
+    z-index:          1;
+    display:          none;
+    position:         fixed;
+    flex-direction:   column;
+    justify-content:  center;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_noAccess_inner {
+    width:            32rem;
+    height:           21rem;
+    padding:          38px 32px 32px 38px;
+    display:          flex;
+    align-self:       center;
+    align-items:      center;
+    border-radius:    8px;
+    flex-direction:   column;
+    justify-content:  space-between;
+    background-color: #FFFFFF;
+}
+
+.modal_noAccess_inner h1 {
+    font-size:   1.75rem;
+    font-weight: 700;
+}
+
+.modal_noAccess_inner p {
+    color:       rgba(var(--color-grey2), 1);
+    font-size:   1.25rem;
+    font-weight: 600;
+}
+
+.btn_login {
+    color:            #FFFFFF;
+    width:            11.9375rem;
+    height:           2.5rem;
+    font-size:        1rem;
+    font-weight:      600;
+    border-radius:    0.25rem;
+    background-color: rgba(var(--color-blue), 1);
+}
+
+.btn_login:hover {
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+
 /* Estilização Modal Excluir Hábito */
 
 .modal_exclude{
