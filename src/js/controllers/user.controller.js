@@ -150,9 +150,16 @@ function requestApiToCreateHabit() {
             const closeCreateHabitMenu = document.querySelector('.modal')
             closeCreateHabitMenu.style.display = 'none'
 
-        }
+            const modalSuccess = document.getElementsByClassName('modal_success')[0]
+            modalSuccess.style.display = 'flex'
 
+            modalSuccess.addEventListener('click', () => {
+                modalSuccess.style.display = 'none'
+            })
+            
+        }
         const allHabits     = await Api.readAllUserHabits()
+
         const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
         showHabits(allHabitsSort)
 
