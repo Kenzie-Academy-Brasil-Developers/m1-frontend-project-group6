@@ -25,10 +25,9 @@ async function showHabits() {
     habitsTable.innerText = ''
 
     data.forEach(habit => {
-        
-        const newHabit = new Habit(habit.habit_id, habit.habit_title, habit.habit_description, habit.habit_category, habit.habit_status,).createTemplate()
+
+        const newHabit = new Habit(habit.habit_id, habit.habit_title, habit.habit_description, habit.habit_category, habit.habit_status).createTemplate()
         console.log(newHabit)
-        newHabit.id = habit.habit_id
         habitsTable.appendChild(newHabit)
     });
 }
@@ -131,4 +130,60 @@ function showMore() {
     })
 }
 
+async function requestApiToEditHabit() {
+
+    const saveChangesButton = document.querySelector('#save_changes_habit_button')
+    saveChangesButton.addEventListener('click', async (e) => {
+        e.preventDefault()
+
+        const data = {}
+
+        const habitTitle = document.querySelector('#habit_title').value
+        console.log(habitTitle)
+        if (habitTitle !== '') {
+            data.habit_title = habitTitle
+        }
+
+        const habitDescription = document.querySelector('#habit_description').value
+        console.log(habitDescription)
+        if (habitDescription !== '') {
+            data.habit_description = habitDescription
+        }
+
+        const habitCategory = document.querySelector('#habit-category').value
+        console.log(habitCategory)
+        if (habitCategory !== '') {
+            data.habit_category = habitCategory
+        }
+        console.log(data)
+
+        const habitId = saveChangesButton.classList[0]
+
+        console.log(habitId)
+
+        const apiResponse = await Api.updateHabit(data, habitId)
+        if (apiResponse.habit_id) {
+
+            const closeCreateHabitMenu = document.querySelector('.edit_habit_modal')
+            closeCreateHabitMenu.style.display = 'none'
+
+        }
+        showHabits()
+
+    })
+
+
+}
+
+requestApiToEditHabit()
+
 showMore()
+
+
+// função para adicionar e remover os valores a serem editados no modal de editar hábito:
+
+function addAndRemoveEditContentModal(e) {
+
+    const editPostButton = document.querySelector('.edit-button');
+
+}
