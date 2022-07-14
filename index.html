@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kenzie Habit</title>
+  <link rel="shortcut icon" href="/src/assets/img/logo-kenzie.png" type="image/x-icon">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +15,7 @@
     rel="stylesheet">
 
   <!-- CSS -->
+  <base href="/">
   <link rel="stylesheet" href="src/css/base.css">
   <link rel="stylesheet" href="src/css/reset.css">
   <link rel="stylesheet" href="src/css/login.style.css">
@@ -21,9 +23,55 @@
 
 <body>
 
-  <h1 class="h1">Página de login :)</h1>
+  <main>
+
+    <section class="main_initialInfo">
+
+      <h1>KenzieHabit</h1>
+
+      <div class="main_initialInfo_initialPhrase">
+
+        <p>If you are going to use a <u>passage</u> of Lorem Ipsum</p>
+        <span>you need to be sure there isn't anything</span>
+
+      </div>
+
+    </section>
+
+    <section class="main_loginForm">
+
+      <form action="">
+
+        <h2>Login</h2>
+
+        <div class="main_loginForm_inputs">
+
+          <div class="loginForm_inputs_userEmail">
+
+            <label for="userEmail">Usuário</label>
+            <input type="email" id="userEmail" name="userEmail" placeholder="Digitar meu email de usuário" required>
+
+          </div>
+
+          <div class="loginForm_inputs_password">
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digitar minha senha" required>
+
+          </div>
+
+          <button>Entrar</button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
 
   <script type="module" src="src/js/controllers/login.controller.js"></script>
+
 </body>
 
 </html>
