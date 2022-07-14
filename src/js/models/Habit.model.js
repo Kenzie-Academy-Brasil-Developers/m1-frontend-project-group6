@@ -165,6 +165,8 @@ export class Habit {
                     tr.style.backgroundColor = '#F1F3F5'
 
                     await Api.completeHabit(this.id)
+
+                    window.location.reload()
                 }
             })
 
