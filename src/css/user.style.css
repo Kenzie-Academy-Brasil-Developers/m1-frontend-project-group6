@@ -156,6 +156,7 @@ body {
 }
 
 .inner_edit_habit_modal>.edit_modal_header>h2 {
+    color: rgba(var(--color-grey1), 1);
     font-weight: 600;
     font-size: 1.250rem;
     line-height: 24px;
@@ -167,6 +168,8 @@ body {
 
 .edit_habit_form {
     width: 100%;
+    max-width: 32rem;
+    max-height: 31rem;
     height: 100%;
     display: flex;
     gap: 16px;
@@ -214,6 +217,9 @@ body {
 }
 
 .edit_habit_form>.description_div>textarea {
+    width: 100%;
+    max-width: 27rem;
+    max-height: 5rem;
     background-color: rgba(var(--color-grey5), 1);
     color: rgba(var(--color-grey2), 1);
     outline: none;
@@ -344,9 +350,9 @@ header h1 {
     display:          flex;
     padding:          1rem 1.25rem 3rem 1.25rem;
     min-height:       96px;
-    align-items:      flex-start;
+    align-items:      center;
     margin-bottom:    8vh;
-    justify-content:  flex-start;
+    /* justify-content:  center; */
     background-color: rgba(var(--color-blue-dark), 1);
 }
 
