@@ -244,7 +244,7 @@ async function requestApiToEditHabit() {
             modalDeleteHabit.style.display = 'none'
             console.log(apiResponse)
 
-            showHabits(allHabitsSort)
+            showHabits(allDataSort)
         }
     })
 
