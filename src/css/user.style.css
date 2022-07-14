@@ -592,10 +592,14 @@ td {
 }
 
 .modal_noAccess_inner {
-    width:            32rem;
-    height:           21rem;
+    width:            50%;
+    height:           60%;
     padding:          38px 32px 32px 38px;
     display:          flex;
+    min-width:        13.75rem;
+    max-width:        32rem;
+    min-height:       17.4375rem;
+    max-height:       21rem;
     align-self:       center;
     align-items:      center;
     border-radius:    8px;
@@ -753,6 +757,13 @@ td {
     .btn_showMore:hover {
         background-color: rgba(var(--color-blue-dark), 1);
     }
+}
+
+/* Estilização modal AcessModal */
+
+.modal_noAccess_inner {
+    max-width:  35rem;
+    max-height: 24rem;
 }
 
 /* Estilização Modal Excluir Hábito */
