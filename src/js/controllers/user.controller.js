@@ -80,6 +80,18 @@ function userMenu() {
 
 //userMenu()
 
+function logout() {
+    const btnLogout = document.getElementsByClassName('btn_logout')[0]
+    btnLogout.addEventListener('click', () => {
+        localStorage.removeItem('@Kenzie-Habit-M2:token')
+        localStorage.removeItem('@Kenzie-Habit-M2:user')
+
+        window.location.assign('index.html')
+    })
+}
+
+logout()
+
 function createHabit() {
     const closeCreateHabitMenu = document.querySelector('.createHabit_innerButton')
     closeCreateHabitMenu.addEventListener('click', (e) => {
