@@ -232,10 +232,10 @@ async function requestApiToEditHabit() {
         console.log(habitId)
 
         const confirmDeletion = document.querySelector('#confirm_action_button')
-        const editHabitButton = document.querySelector('#save_changes_habit_button')
+        confirmDeletion.classList = ''
 
-        confirmDeletion.classList.add(`${editHabitButton.classList[0]}`)
-        editHabitButton.classList.remove(`${editHabitButton.classList[0]}`)
+        const editHabitButton = document.querySelector('#save_changes_habit_button')
+        editHabitButton.classList = ''
 
         const apiResponse = await Api.updateHabit(data, habitId)
         if (apiResponse.habit_id) {
@@ -253,10 +253,12 @@ async function requestApiToEditHabit() {
     const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
     closeEditHabitModal.addEventListener('click', (e) => {
 
-        e.preventDefault()
+        // e.preventDefault()
 
         const confirmDeletion = document.querySelector('#confirm_action_button')
         const editHabitButton = document.querySelector('#save_changes_habit_button')
+
+        console.log(editHabitButton)
 
         confirmDeletion.classList.add(`${editHabitButton.classList[0]}`)
         editHabitButton.classList.remove(`${editHabitButton.classList[0]}`)
@@ -291,6 +293,9 @@ async function requestApiToEditHabit() {
     const closeEditHabitModalButton2 = document.querySelector('#close_exclude_habit_modal_button')
     closeEditHabitModalButton2.addEventListener('click', (e) => {
 
+        const modalExclude = document.querySelector('.modal_exclude')
+        modalExclude.style.display = 'none'
+
         const confirmDeletion = document.querySelector('#confirm_action_button')
         confirmDeletion.classList = ''
 
@@ -298,8 +303,6 @@ async function requestApiToEditHabit() {
 
     const confirmDeletion = document.querySelector('#confirm_action_button')
     confirmDeletion.addEventListener('click', async (e) => {
-
-        const confirmDeletion = document.querySelector('#confirm_action_button')
 
         const habitId = confirmDeletion.classList[0]
         console.log(habitId)
@@ -312,7 +315,17 @@ async function requestApiToEditHabit() {
             modalDeleteHabit.style.display = 'none'
             console.log(apiResponse)
 
-            showHabits(allHabitsSort)
+            const allDataa = await Api.readAllUserHabits()
+            const allDataSortt = allDataa.sort((a, b) => b.habit_id - a.habit_id)
+
+            showHabits(allDataSortt)
+
+            const confirmDeletion = document.querySelector('#confirm_action_button')
+            confirmDeletion.classList = ''
+
+            const confirmEditHabitButton = document.querySelector('#save_changes_habit_button')
+            confirmEditHabitButton.classList = ''
+
         }
     })
 
