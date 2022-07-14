@@ -323,6 +323,7 @@ html, body {
 }
 
 header {
+    position:         relative;
     width:            100vw;
     height:           3.625rem;
     display:          flex;
@@ -565,6 +566,68 @@ td {
    justify-content: right;
 }
 
+@media (max-width: 768px) {
+    .profile_actions {
+        right: 3% !important;
+    }
+}
+/* Estilização modal AcessModal */
+
+.modal_noAccess {
+    top:              0;
+    left:             0;
+    width:            100vw;
+    height:           100vh;
+    z-index:          1;
+    display:          none;
+    position:         fixed;
+    flex-direction:   column;
+    justify-content:  center;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_noAccess_inner {
+    width:            50%;
+    height:           60%;
+    padding:          38px 32px 32px 38px;
+    display:          flex;
+    min-width:        13.75rem;
+    max-width:        32rem;
+    min-height:       17.4375rem;
+    max-height:       21rem;
+    align-self:       center;
+    align-items:      center;
+    border-radius:    8px;
+    flex-direction:   column;
+    justify-content:  space-between;
+    background-color: #FFFFFF;
+}
+
+.modal_noAccess_inner h1 {
+    font-size:   1.75rem;
+    font-weight: 700;
+}
+
+.modal_noAccess_inner p {
+    color:       rgba(var(--color-grey2), 1);
+    font-size:   1.25rem;
+    font-weight: 600;
+}
+
+.btn_login {
+    color:            #FFFFFF;
+    width:            11.9375rem;
+    height:           2.5rem;
+    font-size:        1rem;
+    font-weight:      600;
+    border-radius:    0.25rem;
+    background-color: rgba(var(--color-blue), 1);
+}
+
+.btn_login:hover {
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
 @media (min-width: 769px) {
 
     header {
@@ -691,6 +754,15 @@ td {
 }
 
 /* CSS Modal Exclude Habit */
+
+/* Estilização modal AcessModal */
+
+.modal_noAccess_inner {
+    max-width:  35rem;
+    max-height: 24rem;
+}
+
+/* Estilização Modal Excluir Hábito */
 
 .modal_exclude{
     display: none;
@@ -863,6 +935,64 @@ td {
 }
 
 /* CSS Modal "Habit Created Succesfully" */
+
+.profile_actions {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 8px;
+    gap: 12px;
+    position: absolute;
+    width: 246px;
+    height: 124px;
+    right: 10%;
+    top: 61px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 4px; 
+}
+
+.show {
+    display: flex;
+}
+
+.profile_actions::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: -27px;
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.profile_actions_settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+    padding: 6px 16px;
+    width: 100%;
+    height: 44px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.profile_actions_settings img {
+    width: 16px;
+    height: 21px;
+    object-fit: cover;
+}
+
+.profile_actions_settings p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    color: #343A40;
+}
+
+/* Estilização modal hábito criado com Sucesso!  */
 
 .modal_success{
     display: none;
