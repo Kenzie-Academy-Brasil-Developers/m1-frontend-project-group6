@@ -685,3 +685,85 @@ td {
         background-color: rgba(var(--color-blue-dark), 1);
     }
 }
+
+/* Estilização Modal Excluir Hábito */
+
+.modal_exclude{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_exclude_container{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 32rem;
+    height: 21rem;
+    padding: 38px 32px 32px 38px;
+    align-self: center;
+}
+
+.modal_exclude_title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal_exclude_title h2{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(var(--color-grey1), 1);
+}
+
+.modal_exclude_title button{
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.modal_exclude_question{
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 4rem;
+}
+
+.modal_exclude_alert{
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgba(var(--color-grey2), 1);
+    margin-top: 1.5rem;
+}
+
+.modal_exclude_buttons{
+    margin-top: 4rem;
+}
+
+#cancel_action_button{
+    background-color: rgba(var(--color-grey5), 1);
+    border: 2px solid rgba(var(--color-grey5), 1);
+    border-radius: 4px;
+    color: rgba(var(--color-grey2), 1);
+    width: 12rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+#confirm_action_button{
+    background-color: rgba(var(--color-red), 1);
+    border: 2px solid rgba(var(--color-red), 1);
+    border-radius: 4px;
+    color: #FFFFFF;
+    width: 14.6rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+    
+
+
