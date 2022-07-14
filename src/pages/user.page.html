@@ -31,22 +31,18 @@
 
         <div class="header_div">
 
-            <img class="header_userImage" src="">
-
-            <button class="btn_logout">
-                <img src="/src/assets/img/logout.svg">
-            </button>
+            <img class="header_userImage" src="src/assets/img/default.jpg">
 
         </div>
 
         <div class="profile_actions">
             <div class="profile_actions_settings">
-                <img src="https://cdn-icons-png.flaticon.com/128/456/456212.png" alt="">
+                <img src="src/assets/img/iconUser.svg" alt="">
                 <p>Editar perfil</p>
             </div>
     
             <div id="user_logout" class="profile_actions_settings">
-                <img src="https://cdn-icons.flaticon.com/png/128/4626/premium/4626262.png?token=exp=1657814397~hmac=f0fe837793c63d9626371ae78c3d11f7" alt="">
+                <img src="src/assets/img/logout.svg" alt="">
                 <p>Sair do App</p>
             </div>
         </div>
@@ -55,9 +51,9 @@
 
     <section class="section_userInfo">
 
-        <img class="section_userInfo_image" src="">
+        <img class="section_userInfo_image" src="src/assets/img/default.jpg">
 
-        <h2 class="section_userInfo_name"></h2>
+        <h2 class="section_userInfo_name">Usuário</h2>
 
     </section>
 
@@ -125,7 +121,7 @@
             <form class="edit_habit_form" action="#">
                 <div class="title_div">
                     <label for="habit-title">Título</label>
-                    <input name="habit-title" id="habit_title" placeholder="Título a ser alterado aqui">
+                    <input name="habit-title" id="habit_title" placeholder="Título a ser alterado aqui" required>
                 </div>
                 <div class="description_div">
                     <label for="habit_description">Descrição</label>
@@ -141,10 +137,6 @@
                         <option value="trabalho">Trabalho</option>
                         <option value="saude">Saúde</option>
                     </select>
-                </div>
-                <div class="status_div">
-                    <label for="habit_status">Status</label>
-                    <input type="checkbox" id="habit_status">
                 </div>
             </form>
             <div class="modal_btns_div">
@@ -171,7 +163,7 @@
 
                     <div class="createHabit_title">
                         <label for="title">Título</label>
-                        <input type="text" name="title" id="title" placeholder="Digitar título">
+                        <input type="text" name="title" id="title" placeholder="Digitar título" required>
                     </div>
 
                     <div class="createHabit_description">
@@ -230,7 +222,7 @@
                 </div>
                 <div class="edit_profile_url">
                     <label for="edit-profile-url">URL da imagem do perfil</label>
-                    <input name="edit_profile_url" id="edit_profile_url">
+                    <input type="url" name="edit_profile_url" id="edit_profile_url">
                 </div>
             </form>
             <div class="edit_profile_button">

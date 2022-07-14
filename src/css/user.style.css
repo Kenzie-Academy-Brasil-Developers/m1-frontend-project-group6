@@ -6,6 +6,10 @@ body {
     flex-direction: column;
 }
 
+#edit_profile_url:invalid {
+    outline-color: rgba(var(--color-red-light), 1);
+}
+
 /* CSS Modal Habit */
 
 .modal{
