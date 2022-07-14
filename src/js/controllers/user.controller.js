@@ -6,11 +6,12 @@ function checkToken() {
 
     const btnLogin = document.getElementsByClassName('btn_login')[0]
     btnLogin.addEventListener('click', () => {
-        window.location.assign('index.html')
+        location.replace('index.html')
     })
 
     if(!token) {
         const modalNoAccess = document.getElementsByClassName('modal_noAccess')[0]
+
         modalNoAccess.style.display = 'flex'
     }
 }
@@ -101,8 +102,16 @@ function createHabit() {
 
     const btnCreate = document.querySelector('.btn_create')
     btnCreate.addEventListener('click', (e) => {
+    
+        const titleInput       = document.querySelector('#title')
+        const descriptionInput = document.querySelector('#create_habit_description')
+
+        titleInput.value       = ''
+        descriptionInput.value = ''
+
         const createHabitModal = document.querySelector('.modal')
         createHabitModal.style.display = 'flex'
+        
     })
 }
 
@@ -115,25 +124,27 @@ function requestApiToCreateHabit() {
     createHabitButton.addEventListener('click', async (e) => {
         const data = {}
 
+
         const habitTitle = document.querySelector('#title').value
-        console.log(habitTitle)
+        
         if (habitTitle !== '') {
             data.habit_title = habitTitle
         }
 
         const habitDescription = document.querySelector('#create_habit_description').value
-        console.log(habitDescription)
+        
         if (habitDescription !== '') {
             data.habit_description = habitDescription
         }
 
         const habitCategory = document.querySelector('.create_habit_category').value
-        console.log(habitCategory)
+        
         if (habitCategory !== '') {
             data.habit_category = habitCategory
         }
-        console.log(data)
+        
         const apiResponse = await Api.createHabit(data)
+
         if (apiResponse.habit_id) {
 
             const closeCreateHabitMenu = document.querySelector('.modal')
@@ -141,9 +152,10 @@ function requestApiToCreateHabit() {
 
         }
 
-        const allHabits = await Api.readAllUserHabits()
+        const allHabits     = await Api.readAllUserHabits()
         const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
         showHabits(allHabitsSort)
+
     })
 
 }
