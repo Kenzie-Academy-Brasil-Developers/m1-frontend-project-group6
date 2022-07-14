@@ -926,3 +926,69 @@ td {
     cursor: pointer;
     margin-top: 2rem;
 }
+
+/* Estilização modal hábito criado com Sucesso!  */
+
+.modal_success{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_success_container{
+    display: flex;
+    flex-direction: row;
+    background-color:#E6F8EE;
+    border: 2px solid #56CF8E;
+    border-radius: 8px;
+    width: 28rem;
+    height: 7rem;
+    padding: 38px 32px 32px 38px;
+    align-self: center;
+    color: #000000;
+}
+
+.modal_success_left{
+    display: flex;  
+    align-items: center;
+}
+
+.modal_success_circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 150px;
+    background-color: #56CF8E;
+    position: relative;
+}
+
+.modal_success_circle img{
+    position: absolute;
+    min-height: 1.9rem;
+}
+
+.modal_success_right{
+    margin-left: 1.5rem;
+}
+
+.modal_success_right h2{
+    color: rgba(var(--color-grey1), 1);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.modal_success_right h3{
+    color: rgba(var(--color-grey2), 1);
+    font-weight: 400;
+    font-size: 1rem; 
+}
