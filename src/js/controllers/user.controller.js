@@ -1,6 +1,26 @@
 import { Api } from './Api.controller.js'
 import { Habit } from '../models/Habit.model.js'
 
+let user_info = document.querySelector(".header_userImage")
+
+user_info.addEventListener("click",() => {
+
+    let user_info_event = document.querySelector(".profile_actions")
+
+    user_info_event.classList.toggle("show")
+
+})
+
+let user_log = document.querySelector("#user_logout")
+
+user_log.addEventListener("click",() => {
+
+    localStorage.clear() 
+
+    location.href="../../index.html"
+
+})
+
 async function defineProfileInfo() {
     const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user'))
 
