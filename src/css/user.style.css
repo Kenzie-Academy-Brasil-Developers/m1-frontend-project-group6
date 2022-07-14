@@ -508,9 +508,7 @@ td {
     display:         flex;
     text-align:      left;
     align-items:     center;
-    justify-content: flex-start; 
-    word-wrap: unset;
-    
+    justify-content: flex-start;   
 }
 
 .habit_status {
