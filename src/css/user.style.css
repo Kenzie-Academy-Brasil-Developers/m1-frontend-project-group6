@@ -918,7 +918,7 @@ td {
 /* CSS Modal Edit Profile */
 
 .modal_edit_profile{
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     width: 100vw;
