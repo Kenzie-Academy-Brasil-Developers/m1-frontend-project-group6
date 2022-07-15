@@ -4,9 +4,50 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
-/* Estilização Modal Hábito */
+#edit_profile_url:invalid {
+    outline-color: rgba(var(--color-red-light), 1);
+}
+
+/* 
+Transition fadeIn 
+fonte: https://www.tutoriart.com.br/como-criar-transicao-fade-com-css-no-carregamento-da-pagina-e-imagens/#:~:text=fadeIn%20%C3%A9%20o%20valor%20da,zero%20e%20terminando%20em%201).
+*/
+
+@-webkit-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; } 
+    }
+    @-moz-keyframes fadeIn {
+    0%   { opacity: 0;}
+    100% { opacity: 1; }
+    }
+    @-o-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+    }
+    @keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fadeIn {
+    -webkit-animation: fadeIn 2s ease-in-out;
+    -moz-animation:    fadeIn 2s ease-in-out;
+    -o-animation:      fadeIn 2s ease-in-out;
+    animation:         fadeIn 2s ease-in-out;
+}
+
+.fadeIn_modal {
+    -webkit-animation: fadeIn 0.25s ease-in-out;
+    -moz-animation:    fadeIn 0.25s ease-in-out;
+    -o-animation:      fadeIn 0.25s ease-in-out;
+    animation:         fadeIn 0.25s ease-in-out;
+}
+
+/* CSS Modal Habit */
 
 .modal{
     display: none;
@@ -24,11 +65,10 @@ body {
 .container_createHabit{
     background-color: rgba(var(--color-white), 1);
     border-radius: 8px;
-    width: 32rem;
-    height: 31rem;
+    min-width: 19rem;
+    height: 29rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
-
 }
 
 .createHabit_inner{
@@ -72,7 +112,7 @@ body {
 }
 
 .createHabit_title input{
-    width: 27rem;
+    min-width: 17rem;
     height: 2.5rem;
 }
 
@@ -84,15 +124,19 @@ body {
 }
 
 .createHabit_description textarea{
-    max-width: 27rem;
-    max-height: 5rem;
+    max-width: 17rem;
+    min-width: 17rem;
+    min-height: 6rem;
+    max-height: 6rem;
     text-align: initial;
     background-color: rgba(var(--color-grey5), 1);
     border: 2px solid rgba(var(--color-grey5), 1);
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 0.5rem;
+    padding-top: 0.3rem;
     font-family: var(--font-base)
+    
 }
 
 .createHabit_category{
@@ -103,7 +147,7 @@ body {
 }
 
 .createHabit_category select{
-    width: 27rem;
+    width: 17rem;
     height: 2.5rem;
     background-color: rgba(var(--color-grey5), 1);
     border: 2px solid rgba(var(--color-grey5), 1);
@@ -113,8 +157,8 @@ body {
 }
 
 .button_insert button{
-    margin-top: 2rem ;
-    width: 27rem;
+    margin-top: 1rem ;
+    width: 17rem;
     height: 2.5rem;
     background-color: rgba(var(--color-blue), 1);  
     border: 2px solid rgba(var(--color-blue), 1);
@@ -123,6 +167,43 @@ body {
     font-weight: 600;
     font-size: 1rem;
 }
+
+.button_insert button:hover{
+    cursor: pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+.createHabit_innerButton button:hover{
+    cursor: pointer;
+    background-color: rgba(var(--color-grey4), 1);
+}
+
+@media (min-width: 768px){
+
+    .container_createHabit{
+        width: 32rem;
+    }
+    
+    .createHabit_title input{
+        width: 27rem;
+    }
+
+    .createHabit_description textarea{
+        max-width: 27rem;
+        min-width: 27rem;
+    }
+    
+    .createHabit_category select{
+        width: 27rem;
+    }
+    
+    .button_insert button{
+        width: 27rem;
+    }
+
+}
+
+/* CSS Modal Edit Habit */
 
 .edit_habit_modal {
     width: 100vw;
@@ -307,6 +388,18 @@ body {
     font-size: 1rem;
 }
 
+button:hover#save_changes_habit_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+button:hover#delete_habit_button {
+    cursor: pointer;
+    background-color: rgba(var(--color-grey4), 1);
+}
+
+/* CSS User Page */
+
 html, body {
     color:          rgba(var(--color-blue), 1);
     width:          100vw;
@@ -319,6 +412,7 @@ html, body {
 }
 
 header {
+    position:         relative;
     width:            100vw;
     height:           3.625rem;
     display:          flex;
@@ -344,17 +438,19 @@ header h1 {
 
 
 .section_userInfo {
-    gap:              1.375rem;
-    width:            100%;
-    height:           10.8125rem;
-    display:          flex;
-    padding:          1rem 1.25rem 3rem 1.25rem;
-    min-height:       96px;
-    align-items:      center;
-    margin-bottom:    8vh;
-    /* justify-content:  center; */
+
+    gap: 1.375rem;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    padding: 1rem 1.25rem 1rem 1.25rem;
+    min-height: 96px;
+    align-items: center;
+    margin-bottom: 8vh;
+    /* justify-content: center; */
     background-color: rgba(var(--color-blue-dark), 1);
 }
+
 
 .section_userInfo_image {
     width:         3.75rem;
@@ -508,7 +604,9 @@ td {
     display:         flex;
     text-align:      left;
     align-items:     center;
-    justify-content: flex-start;   
+    justify-content: flex-start; 
+    word-wrap: unset;
+    
 }
 
 .habit_status {
@@ -559,6 +657,68 @@ td {
    justify-content: right;
 }
 
+@media (max-width: 768px) {
+    .profile_actions {
+        right: 3% !important;
+    }
+}
+/* Estilização modal AcessModal */
+
+.modal_noAccess {
+    top:              0;
+    left:             0;
+    width:            100vw;
+    height:           100vh;
+    z-index:          1;
+    display:          none;
+    position:         fixed;
+    flex-direction:   column;
+    justify-content:  center;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_noAccess_inner {
+    width:            50%;
+    height:           60%;
+    padding:          38px 32px 32px 38px;
+    display:          flex;
+    min-width:        13.75rem;
+    max-width:        32rem;
+    min-height:       17.4375rem;
+    max-height:       21rem;
+    align-self:       center;
+    align-items:      center;
+    border-radius:    8px;
+    flex-direction:   column;
+    justify-content:  space-between;
+    background-color: #FFFFFF;
+}
+
+.modal_noAccess_inner h1 {
+    font-size:   1.75rem;
+    font-weight: 700;
+}
+
+.modal_noAccess_inner p {
+    color:       rgba(var(--color-grey2), 1);
+    font-size:   1.25rem;
+    font-weight: 600;
+}
+
+.btn_login {
+    color:            #FFFFFF;
+    width:            11.9375rem;
+    height:           2.5rem;
+    font-size:        1rem;
+    font-weight:      600;
+    border-radius:    0.25rem;
+    background-color: rgba(var(--color-blue), 1);
+}
+
+.btn_login:hover {
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
 @media (min-width: 769px) {
 
     header {
@@ -590,7 +750,7 @@ td {
     }
 
     table {
-        margin:        5vh 0 12vh 0 ;
+        margin:        5vh 0 10vh 0 ;
         border:        2px solid rgba(var(--color-grey4), 1);
         height:        667;  
         max-width:     1440px;
@@ -684,7 +844,12 @@ td {
     }
 }
 
-/* Estilização Modal Excluir Hábito */
+.modal_noAccess_inner {
+    max-width:  35rem;
+    max-height: 24rem;
+}
+
+/* CSS Modal Exclude Habit */
 
 .modal_exclude{
     display: none;
@@ -702,7 +867,7 @@ td {
 .modal_exclude_container{
     background-color: #FFFFFF;
     border-radius: 8px;
-    width: 32rem;
+    width: 19rem;
     height: 21rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
@@ -728,18 +893,20 @@ td {
     color: #000000;
     font-weight: 600;
     font-size: 1.25rem;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
 }
 
 .modal_exclude_alert{
     font-weight: 400;
     font-size: 1rem;
     color: rgba(var(--color-grey2), 1);
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .modal_exclude_buttons{
-    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
 }
 
 #cancel_action_button{
@@ -747,9 +914,15 @@ td {
     border: 2px solid rgba(var(--color-grey5), 1);
     border-radius: 4px;
     color: rgba(var(--color-grey2), 1);
-    width: 12rem;
+    width: 14.6rem;
     height: 2.5rem;
     cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+button:hover#cancel_action_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-grey4), 1);
 }
 
 #confirm_action_button{
@@ -762,7 +935,45 @@ td {
     cursor: pointer;
 }
 
-/* Estilização Modal Editar Perfil */
+button:hover#confirm_action_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-red-light), 1);
+}
+
+@media (min-width: 768px){
+
+    .modal_exclude_container{
+        width: 32rem;
+    }
+
+    #confirm_action_button{
+        width: 14.6rem;
+    }
+    
+    .modal_exclude_question{
+        margin-top: 4rem;
+    }
+    
+    .modal_exclude_alert{
+        margin-top: 2rem;
+    }
+
+    .modal_exclude_buttons{
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+    }
+
+    #confirm_action_button{
+        margin-left: 5px;
+    }
+
+    #cancel_action_button{
+        margin-right: 5px;
+    }
+}
+
+/* CSS Modal Edit Profile */
 
 .modal_edit_profile{
     display: none;
@@ -780,7 +991,7 @@ td {
 .edit_profile_container{
     background-color: rgba(var(--color-white), 1);
     border-radius: 8px;
-    width: 32rem;
+    width: 19rem;
     height: 21rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
@@ -821,7 +1032,7 @@ td {
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 0.5rem;
-    width: 27.4rem;
+    width: 14rem;
     height: 2.5rem;
 }
 
@@ -841,7 +1052,7 @@ td {
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 0.5rem;
-    width: 27.4rem;
+    width: 14rem;
     height: 2.5rem;
 }
 
@@ -850,8 +1061,251 @@ td {
     border: 2px solid gba(var(--color-blue), 1);
     border-radius: 4px;
     color: rgba(var(--color-white), 1);
-    width: 27.5rem;
+    width: 14rem;
     height: 2.5rem;
     cursor: pointer;
     margin-top: 2rem;
+}
+
+button:hover#edit_profile_save_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+@media (min-width: 768px) {
+
+   .edit_profile_container{
+        width: 32rem;
+   } 
+
+   .edit_profile_name input{
+        width: 27.4rem;
+   }
+
+   .edit_profile_url input{
+    width: 27.4rem;
+   }
+
+   #edit_profile_save_button{
+       width: 27.5rem;
+   }
+}
+
+/*  */
+
+.profile_actions {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 8px;
+    gap: 12px;
+    position: absolute;
+    width: 246px;
+    height: 124px;
+    right: 10%;
+    top: 61px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 4px; 
+}
+
+.show {
+    display: flex;
+}
+
+.profile_actions::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: -27px;
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.profile_actions_settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+    padding: 6px 16px;
+    width: 100%;
+    height: 44px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.profile_actions_settings img {
+    width: 16px;
+    height: 21px;
+    object-fit: cover;
+}
+
+.profile_actions_settings p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    color: #343A40;
+}
+
+/* CSS Modal "Habit Created Succesfully" */
+
+.modal_success{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_success_container{
+    display: flex;
+    flex-direction: row;
+    background-color: #E6F8EE;
+    border: 2px solid rgba(var(--color-green), 1);
+    border-radius: 8px;
+    width: 19rem;
+    height: 7rem;
+    justify-content: center;
+    align-self: center;
+    color: #000000;
+}
+
+.modal_success_left{
+    display: flex;  
+    align-items: center;
+}
+
+.modal_success_circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 150px;
+    background-color: rgba(var(--color-green), 1);
+    position: relative;
+}
+
+.modal_success_circle img{
+    position: absolute;
+    min-height: 1.9rem;
+}
+
+.modal_success_right{
+    margin-left: 1.5rem;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal_success_right h2{
+    color: rgba(var(--color-grey1), 1);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.modal_success_right h3{
+    color: rgba(var(--color-grey2), 1);
+    font-weight: 400;
+    font-size: 1rem; 
+}
+
+@media (min-width:768px){
+    
+    .modal_success_container{
+        width: 28rem;
+    } 
+}
+
+/* CSS Modal "Habit Not Created" */
+
+.modal_not_created{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(var(--color-grey1), 0.65);
+}
+
+.modal_not_created_container{
+    display: flex;
+    flex-direction: row;
+    background-color: #f7c6c6;
+    border: 2px solid rgba(var(--color-red), 1);
+    border-radius: 8px;
+    width: 19rem;
+    height: 7rem;
+    padding: 38px 32px 32px 38px;
+    align-self: center;
+    color: #000000;
+}
+
+.modal_not_created_left{
+    display: flex;  
+    align-items: center;
+}
+
+.modal_not_created_circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 150px;
+    background-color: rgba(var(--color-red), 1);
+    position: relative;
+}
+
+.modal_not_created_circle img{
+    position: absolute;
+    min-height: 1.9rem;
+}
+
+.modal_not_created_right{
+    margin-left: 1.5rem;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal_not_created_right h2{
+    color: rgba(var(--color-grey1), 1);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.modal_not_created_right h3{
+    color: rgba(var(--color-grey2), 1);
+    font-weight: 400;
+    font-size: 0.9rem; 
+}
+
+@media (min-width: 768px){
+    .modal_not_created_container{
+        width: 28rem;
+    }
+
+    .modal_not_created_right h2{
+        font-size: 1.25rem;
+    }
+    
+    .modal_not_created_right h3{
+        font-size: 1rem; 
+    }
 }

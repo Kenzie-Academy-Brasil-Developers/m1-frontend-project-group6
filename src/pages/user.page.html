@@ -23,21 +23,39 @@
 
 </head>
 
-<body>
+
+<body class="fadeIn">
+
 
     <header>
 
         <h1>KenzieHabit</h1>
 
-        <img class="header_userImage" src="">
+        <div class="header_div">
+
+            <img class="header_userImage" src="src/assets/img/default.jpg">
+
+        </div>
+
+        <div class="profile_actions fadeIn_modal">
+            <div class="profile_actions_settings">
+                <img src="src/assets/img/iconUser.svg" alt="">
+                <p>Editar perfil</p>
+            </div>
+    
+            <div id="user_logout" class="profile_actions_settings">
+                <img src="src/assets/img/logout.svg" alt="">
+                <p>Sair do App</p>
+            </div>
+        </div>
 
     </header>
 
     <section class="section_userInfo">
 
-        <img class="section_userInfo_image" src="">
+        <img class="section_userInfo_image" src="src/assets/img/default.jpg">
 
-        <h2 class="section_userInfo_name"></h2>
+        <h2 class="section_userInfo_name">Usuário</h2>
 
     </section>
 
@@ -83,10 +101,22 @@
 
     </main>
 
-    <footer></footer>
+
+    <div class="modal_noAccess"> 
+
+        <div class="modal_noAccess_inner">
+            
+            <h1>Opa! Acesso Negado :(</h1>
+            <p>Faça o login para continuar</p>
+
+            <button class="btn_login">Login</button>
+
+        </div>
+        
+    </div>
 
     <div class="edit_habit_modal">
-        <div class="inner_edit_habit_modal">
+        <div class="inner_edit_habit_modal fadeIn_modal">
             <div class="edit_modal_header">
                 <h2>Editar hábito</h2>
                 <button id="close_edit_modal_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
@@ -94,7 +124,7 @@
             <form class="edit_habit_form" action="#">
                 <div class="title_div">
                     <label for="habit-title">Título</label>
-                    <input name="habit-title" id="habit_title" placeholder="Título a ser alterado aqui">
+                    <input name="habit-title" id="habit_title" placeholder="Título a ser alterado aqui" required>
                 </div>
                 <div class="description_div">
                     <label for="habit_description">Descrição</label>
@@ -111,10 +141,6 @@
                         <option value="saude">Saúde</option>
                     </select>
                 </div>
-                <div class="status_div">
-                    <label for="habit_status">Status</label>
-                    <input type="checkbox" id="habit_status">
-                </div>
             </form>
             <div class="modal_btns_div">
                 <button id="delete_habit_button" name="delete_habit_button">Excluir</button>
@@ -125,9 +151,9 @@
 
     <div class="modal">
 
-        <div class="container_createHabit">
+        <div class="container_createHabit fadeIn_modal">
 
-            <div class="modal_createHabit">
+            <div class="modal_createHabit" >
 
                 <div class="createHabit_inner">
 
@@ -140,7 +166,7 @@
 
                     <div class="createHabit_title">
                         <label for="title">Título</label>
-                        <input type="text" name="title" id="title" placeholder="Digitar título">
+                        <input type="text" name="title" id="title" placeholder="Digitar título" required>
                     </div>
 
                     <div class="createHabit_description">
@@ -172,22 +198,22 @@
     </div>
 
     <div class="modal_exclude">
-        <div class="modal_exclude_container">
+        <div class="modal_exclude_container fadeIn_modal">
             <div class="modal_exclude_title">
                 <h2>Excluir hábito</h2>
-                <button id="close_edit_modal_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
+                <button id="close_exclude_habit_modal_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
             </div>
-            <div class="modal_exclude_question">Tem certeza que deseja excluir este hábito?</div>
+            <div class="modal_exclude_question">Certeza que deseja excluir este hábito?</div>
             <div class="modal_exclude_alert">Após executar essa ação não será possível desfazer</div>
             <div class="modal_exclude_buttons">
-                <git id="cancel_action_button" name="cancel_action_button">Cancelar</git button>
+                <button id="cancel_action_button" name="cancel_action_button">Cancelar</button>
                 <button id="confirm_action_button" name="confirm_action_button">Sim, excluir este hábito</button>
             </div>
         </div>
     </div>
 
     <div class="modal_edit_profile">
-        <div class="edit_profile_container">
+        <div class="edit_profile_container fadeIn_modal">
             <div class="edit_profile_title">
                 <h2>Editar perfil</h2>
                 <button id="close_edit_profile_button"><img src="/src/assets/img/x-close.svg" alt=""></button>
@@ -199,7 +225,7 @@
                 </div>
                 <div class="edit_profile_url">
                     <label for="edit-profile-url">URL da imagem do perfil</label>
-                    <input name="edit_profile_url" id="edit_profile_url">
+                    <input type="url" name="edit_profile_url" id="edit_profile_url">
                 </div>
             </form>
             <div class="edit_profile_button">
@@ -208,7 +234,35 @@
         </div>
     </div>
 
+    <div class="modal_success">
+        <div class="modal_success_container">
+            <div class="modal_success_left">
+                <div class="modal_success_circle">
+                    <img src="/src/assets/img/checkSignal.svg" alt="">
+                </div>
+            </div>
+            <div class="modal_success_right">
+                <h2>Sucesso!</h2>
+                <h3>Seu hábito foi criado</h3>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal_not_created">
+        <div class="modal_not_created_container">
+            <div class="modal_not_created_left">
+                <div class="modal_not_created_circle">
+                    <img src="/src/assets/img/x-closeWhite.svg" alt="">
+                </div>
+            </div>
+            <div class="modal_not_created_right">
+                <h2>Ops, algo deu errado!</h2>
+                <h3>Seu hábito não foi criado</h3>
+            </div>
+        </div>
+    </div>
+    
+  
     <script type="module" src="/src/js/controllers/user.controller.js"></script>
 
 </body>
