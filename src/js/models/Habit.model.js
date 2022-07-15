@@ -203,10 +203,10 @@ export class Habit {
                     btnSelect.appendChild(imgCheck)
 
                     tr.style.backgroundColor = '#F1F3F5'
-
+                    tr.style.textDecoration = 'line-through'
+                    
                     await Api.completeHabit(this.id)
 
-                    window.location.reload()
                 }
             })
 
