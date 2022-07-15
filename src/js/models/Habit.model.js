@@ -25,7 +25,6 @@ export class Habit {
             const imgCheck    = document.createElement('img')
 
             tr.id        = this.id
-            // editImg.id   = this.id
             btnSelect.id = 'concluded'
 
             status.classList.add('habit_status', `status:${this.id}`)
@@ -91,47 +90,7 @@ export class Habit {
                 confirmDeletion.classList.add(`${habitId}`)
 
             })
-
-            // editImg.addEventListener('click', async (e) => {
-            //     const menuEdit = document.getElementsByClassName('edit_habit_modal')[0]
-            //     menuEdit.style.display = 'flex'
-
-            //     const editHabitButton = document.querySelector('#save_changes_habit_button')
-
-            //     const element = e.target
-            //     console.log(element)
-
-            //     const habitId = element.classList[0]
-            //     console.log(habitId)
-
-            //     const title = document.getElementsByClassName(`title:${habitId}`)[0].innerText
-            //     console.log(title)
-
-            //     const editTitle = document.querySelector('#habit_title')
-            //     console.log(editTitle)
-
-            //     editTitle.value = title
-
-            //     const description = document.getElementsByClassName(`description:${habitId}`)[0].innerText
-            //     console.log(description)
-
-            //     const editDescription = document.querySelector("#habit_description")
-            //     console.log(editDescription)
-
-            //     editDescription.value = description
-
-            //     const category = document.getElementsByClassName(`category:${habitId}`)[0].innerText
-            //     console.log(category)
-
-            //     const editCategory = document.querySelector("#habit-category")
-            //     console.log(editCategory)
-
-            //     editCategory.value = category
-
-            //     editHabitButton.classList.add(`${habitId}`)
-
-            // })
-
+            
             // adding eventlistener to close edit modal: 
 
             const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
@@ -175,7 +134,6 @@ export class Habit {
             const imgCheck    = document.createElement('img')
 
             tr.id      = this.id
-            // editImg.id = this.id
 
             status.classList.add('habit_status', `status:${this.id}`)
             btnSelect.classList.add('btn_selectHabit')
@@ -204,9 +162,8 @@ export class Habit {
 
                     tr.style.backgroundColor = '#F1F3F5'
                     tr.style.textDecoration = 'line-through'
-                    
-                    await Api.completeHabit(this.id)
 
+                    await Api.completeHabit(this.id)
                 }
             })
 
