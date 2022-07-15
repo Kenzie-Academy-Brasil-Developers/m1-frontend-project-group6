@@ -747,7 +747,7 @@ td {
     }
 
     table {
-        margin:        5vh 0 12vh 0 ;
+        margin:        5vh 0 10vh 0 ;
         border:        2px solid rgba(var(--color-grey4), 1);
         height:        667;  
         max-width:     1440px;
@@ -1305,5 +1305,4 @@ button:hover#edit_profile_save_button{
     .modal_not_created_right h3{
         font-size: 1rem; 
     }
-
 }
