@@ -6,10 +6,6 @@ body {
     flex-direction: column;
 }
 
-#edit_profile_url:invalid {
-    outline-color: rgba(var(--color-red-light), 1);
-}
-
 /* CSS Modal Habit */
 
 .modal{
@@ -131,6 +127,16 @@ body {
     font-size: 1rem;
 }
 
+.button_insert button:hover{
+    cursor: pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+.createHabit_innerButton button:hover{
+    cursor: pointer;
+    background-color: rgba(var(--color-grey4), 1);
+}
+
 @media (min-width: 768px){
 
     .container_createHabit{
@@ -155,7 +161,6 @@ body {
     }
 
 }
-
 
 /* CSS Modal Edit Habit */
 
@@ -342,6 +347,16 @@ body {
     font-size: 1rem;
 }
 
+button:hover#save_changes_habit_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+button:hover#delete_habit_button {
+    cursor: pointer;
+    background-color: rgba(var(--color-grey4), 1);
+}
+
 /* CSS User Page */
 
 html, body {
@@ -382,16 +397,16 @@ header h1 {
 
 
 .section_userInfo {
-    gap:                1.375rem;
-    width:              100%;
-    height:             8rem;
-    display:            flex;
-    padding:            1.25rem 1.25rem;
-    /* min-height: 96px; */
-    align-items:        center;
-    margin-bottom:      8vh;
-    /* justify-content: center; */
-    background-color:   rgba(var(--color-blue-dark), 1);
+    gap:              1.375rem;
+    width:            100%;
+    height:           10.8125rem;
+    display:          flex;
+    padding:          1rem 1.25rem 3rem 1.25rem;
+    min-height:       96px;
+    align-items:      center;
+    margin-bottom:    8vh;
+    /* justify-content:  center; */
+    background-color: rgba(var(--color-blue-dark), 1);
 }
 
 .section_userInfo_image {
@@ -862,6 +877,11 @@ td {
     margin-bottom: 0.5rem;
 }
 
+button:hover#cancel_action_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-grey4), 1);
+}
+
 #confirm_action_button{
     background-color: rgba(var(--color-red), 1);
     border: 2px solid rgba(var(--color-red), 1);
@@ -870,6 +890,11 @@ td {
     width: 14.6rem;
     height: 2.5rem;
     cursor: pointer;
+}
+
+button:hover#confirm_action_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-red-light), 1);
 }
 
 @media (min-width: 768px){
@@ -999,6 +1024,11 @@ td {
     margin-top: 2rem;
 }
 
+button:hover#edit_profile_save_button{
+    cursor: pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
 @media (min-width: 768px) {
 
    .edit_profile_container{
@@ -1018,11 +1048,7 @@ td {
    }
 }
 
-
-
-
-
-/* CSS Modal "Habit Created Succesfully" */
+/*  */
 
 .profile_actions {
     display: none;
@@ -1080,7 +1106,7 @@ td {
     color: #343A40;
 }
 
-/* Estilização modal hábito criado com Sucesso!  */
+/* CSS Modal "Habit Created Succesfully" */
 
 .modal_success{
     display: none;
@@ -1101,9 +1127,9 @@ td {
     background-color: #E6F8EE;
     border: 2px solid rgba(var(--color-green), 1);
     border-radius: 8px;
-    width: 28rem;
+    width: 19rem;
     height: 7rem;
-    padding: 38px 32px 32px 38px;
+    justify-content: center;
     align-self: center;
     color: #000000;
 }
@@ -1131,6 +1157,10 @@ td {
 
 .modal_success_right{
     margin-left: 1.5rem;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .modal_success_right h2{
@@ -1144,6 +1174,13 @@ td {
     color: rgba(var(--color-grey2), 1);
     font-weight: 400;
     font-size: 1rem; 
+}
+
+@media (min-width:768px){
+    
+    .modal_success_container{
+        width: 28rem;
+    } 
 }
 
 /* CSS Modal "Habit Not Created" */
@@ -1167,7 +1204,7 @@ td {
     background-color: #f7c6c6;
     border: 2px solid rgba(var(--color-red), 1);
     border-radius: 8px;
-    width: 28rem;
+    width: 19rem;
     height: 7rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
@@ -1197,17 +1234,36 @@ td {
 
 .modal_not_created_right{
     margin-left: 1.5rem;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .modal_not_created_right h2{
     color: rgba(var(--color-grey1), 1);
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
 .modal_not_created_right h3{
     color: rgba(var(--color-grey2), 1);
     font-weight: 400;
-    font-size: 1rem; 
+    font-size: 0.9rem; 
+}
+
+@media (min-width: 768px){
+    .modal_not_created_container{
+        width: 28rem;
+    }
+
+    .modal_not_created_right h2{
+        font-size: 1.25rem;
+    }
+    
+    .modal_not_created_right h3{
+        font-size: 1rem; 
+    }
+
 }
