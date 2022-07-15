@@ -25,7 +25,7 @@ export class Habit {
             const imgCheck    = document.createElement('img')
 
             tr.id        = this.id
-            editImg.id   = this.id
+            // editImg.id   = this.id
             btnSelect.id = 'concluded'
 
             status.classList.add('habit_status', `status:${this.id}`)
@@ -34,6 +34,7 @@ export class Habit {
             category.classList.add('habit_category', `category:${this.id}`)
             edit.classList.add('habit_edit')
             btnSelect.classList.add('btn_selectHabit-Concluded')
+            editImg.classList.add(`${this.id}`)
 
             title.innerText       = this.title
             description.innerText = this.description
@@ -174,7 +175,7 @@ export class Habit {
             const imgCheck    = document.createElement('img')
 
             tr.id      = this.id
-            editImg.id = this.id
+            // editImg.id = this.id
 
             status.classList.add('habit_status', `status:${this.id}`)
             btnSelect.classList.add('btn_selectHabit')
@@ -182,6 +183,7 @@ export class Habit {
             description.classList.add('habit_description', `description:${this.id}`)
             category.classList.add('habit_category', `category:${this.id}`)
             edit.classList.add('habit_edit')
+            editImg.classList.add(`${this.id}`)
             
             title.innerText       = this.title
             description.innerText = this.description
