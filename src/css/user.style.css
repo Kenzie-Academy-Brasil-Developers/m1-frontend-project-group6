@@ -353,16 +353,16 @@ header h1 {
 
 
 .section_userInfo {
-    gap:              1.375rem;
-    width:            100%;
-    height:           10.8125rem;
-    display:          flex;
-    padding:          1rem 1.25rem 3rem 1.25rem;
-    min-height:       96px;
-    align-items:      center;
-    margin-bottom:    8vh;
-    /* justify-content:  center; */
-    background-color: rgba(var(--color-blue-dark), 1);
+    gap:                1.375rem;
+    width:              100%;
+    height:             8rem;
+    display:            flex;
+    padding:            1.25rem 1.25rem;
+    /* min-height: 96px; */
+    align-items:        center;
+    margin-bottom:      8vh;
+    /* justify-content: center; */
+    background-color:   rgba(var(--color-blue-dark), 1);
 }
 
 .section_userInfo_image {
