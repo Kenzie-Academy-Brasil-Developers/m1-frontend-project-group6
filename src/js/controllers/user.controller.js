@@ -196,17 +196,26 @@ function requestApiToCreateHabit() {
     createHabitButton.addEventListener('click', async (e) => {
         const data = {}
 
+        const errorModal = document.getElementsByClassName('modal_not_created')[0]
+
+        errorModal.addEventListener('click', () => {
+            errorModal.style.display = 'none'
+        })
 
         const habitTitle = document.querySelector('#title').value
         
         if (habitTitle !== '') {
             data.habit_title = habitTitle
+        } else {
+            errorModal.style.display = 'flex'
         }
 
         const habitDescription = document.querySelector('#create_habit_description').value
         
         if (habitDescription !== '') {
             data.habit_description = habitDescription
+        } else {
+            errorModal.style.display = 'flex'
         }
 
         const habitCategory = document.querySelector('.create_habit_category').value
@@ -230,7 +239,7 @@ function requestApiToCreateHabit() {
             })
             
         }
-        const allHabits     = await Api.readAllUserHabits()
+        const allHabits = await Api.readAllUserHabits()
 
         const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
         showHabits(allHabitsSort)
