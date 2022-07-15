@@ -28,11 +28,10 @@ body {
 .container_createHabit{
     background-color: rgba(var(--color-white), 1);
     border-radius: 8px;
-    width: 32rem;
-    height: 31rem;
+    min-width: 19rem;
+    height: 29rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
-
 }
 
 .createHabit_inner{
@@ -76,7 +75,7 @@ body {
 }
 
 .createHabit_title input{
-    width: 27rem;
+    min-width: 17rem;
     height: 2.5rem;
 }
 
@@ -88,15 +87,19 @@ body {
 }
 
 .createHabit_description textarea{
-    max-width: 27rem;
-    max-height: 5rem;
+    max-width: 17rem;
+    min-width: 17rem;
+    min-height: 6rem;
+    max-height: 6rem;
     text-align: initial;
     background-color: rgba(var(--color-grey5), 1);
     border: 2px solid rgba(var(--color-grey5), 1);
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 0.5rem;
+    padding-top: 0.3rem;
     font-family: var(--font-base)
+    
 }
 
 .createHabit_category{
@@ -107,7 +110,7 @@ body {
 }
 
 .createHabit_category select{
-    width: 27rem;
+    width: 17rem;
     height: 2.5rem;
     background-color: rgba(var(--color-grey5), 1);
     border: 2px solid rgba(var(--color-grey5), 1);
@@ -117,8 +120,8 @@ body {
 }
 
 .button_insert button{
-    margin-top: 2rem ;
-    width: 27rem;
+    margin-top: 1rem ;
+    width: 17rem;
     height: 2.5rem;
     background-color: rgba(var(--color-blue), 1);  
     border: 2px solid rgba(var(--color-blue), 1);
@@ -127,6 +130,42 @@ body {
     font-weight: 600;
     font-size: 1rem;
 }
+
+button:hover{
+    cursor:           pointer;
+    background-color: rgba(var(--color-blue-dark), 1);
+}
+
+@media (min-width: 768px){
+
+    .container_createHabit{
+        width: 32rem;
+    }
+    
+    .createHabit_title input{
+        width: 27rem;
+    }
+
+    .createHabit_description textarea{
+        max-width: 27rem;
+        min-width: 27rem;
+    }
+    
+    .createHabit_category select{
+        width: 27rem;
+    }
+    
+    .button_insert button{
+        width: 27rem;
+    }
+    
+    button:hover{
+        cursor:           pointer;
+        background-color: rgba(var(--color-blue-dark), 1);
+    }
+
+}
+
 
 /* CSS Modal Edit Habit */
 
@@ -757,16 +796,12 @@ td {
     }
 }
 
-/* CSS Modal Exclude Habit */
-
-/* Estilização modal AcessModal */
-
 .modal_noAccess_inner {
     max-width:  35rem;
     max-height: 24rem;
 }
 
-/* Estilização Modal Excluir Hábito */
+/* CSS Modal Exclude Habit */
 
 .modal_exclude{
     display: none;
@@ -784,7 +819,7 @@ td {
 .modal_exclude_container{
     background-color: #FFFFFF;
     border-radius: 8px;
-    width: 32rem;
+    width: 19rem;
     height: 21rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
@@ -810,18 +845,20 @@ td {
     color: #000000;
     font-weight: 600;
     font-size: 1.25rem;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
 }
 
 .modal_exclude_alert{
     font-weight: 400;
     font-size: 1rem;
     color: rgba(var(--color-grey2), 1);
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .modal_exclude_buttons{
-    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
 }
 
 #cancel_action_button{
@@ -829,9 +866,10 @@ td {
     border: 2px solid rgba(var(--color-grey5), 1);
     border-radius: 4px;
     color: rgba(var(--color-grey2), 1);
-    width: 12rem;
+    width: 14.6rem;
     height: 2.5rem;
     cursor: pointer;
+    margin-bottom: 0.5rem;
 }
 
 #confirm_action_button{
@@ -844,10 +882,43 @@ td {
     cursor: pointer;
 }
 
+@media (min-width: 768px){
+
+    .modal_exclude_container{
+        width: 32rem;
+    }
+
+    #confirm_action_button{
+        width: 14.6rem;
+    }
+    
+    .modal_exclude_question{
+        margin-top: 4rem;
+    }
+    
+    .modal_exclude_alert{
+        margin-top: 2rem;
+    }
+
+    .modal_exclude_buttons{
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+    }
+
+    #confirm_action_button{
+        margin-left: 5px;
+    }
+
+    #cancel_action_button{
+        margin-right: 5px;
+    }
+}
+
 /* CSS Modal Edit Profile */
 
 .modal_edit_profile{
-    display: none;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100vw;
@@ -862,7 +933,7 @@ td {
 .edit_profile_container{
     background-color: rgba(var(--color-white), 1);
     border-radius: 8px;
-    width: 32rem;
+    width: 19rem;
     height: 21rem;
     padding: 38px 32px 32px 38px;
     align-self: center;
@@ -903,7 +974,7 @@ td {
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 0.5rem;
-    width: 27.4rem;
+    width: 14rem;
     height: 2.5rem;
 }
 
@@ -923,7 +994,7 @@ td {
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 0.5rem;
-    width: 27.4rem;
+    width: 14rem;
     height: 2.5rem;
 }
 
@@ -932,11 +1003,34 @@ td {
     border: 2px solid gba(var(--color-blue), 1);
     border-radius: 4px;
     color: rgba(var(--color-white), 1);
-    width: 27.5rem;
+    width: 14rem;
     height: 2.5rem;
     cursor: pointer;
     margin-top: 2rem;
 }
+
+@media (min-width: 768px) {
+
+   .edit_profile_container{
+        width: 32rem;
+   } 
+
+   .edit_profile_name input{
+        width: 27.4rem;
+   }
+
+   .edit_profile_url input{
+    width: 27.4rem;
+   }
+
+   #edit_profile_save_button{
+       width: 27.5rem;
+   }
+}
+
+
+
+
 
 /* CSS Modal "Habit Created Succesfully" */
 
