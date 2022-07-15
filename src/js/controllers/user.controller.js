@@ -1,7 +1,6 @@
 import { Api } from './Api.controller.js'
 import { Habit } from '../models/Habit.model.js'
 
-
 let user_info = document.querySelector(".header_userImage")
 
     user_info.addEventListener("click",() => {

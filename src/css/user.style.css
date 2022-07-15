@@ -10,6 +10,42 @@ body {
     outline-color: rgba(var(--color-red-light), 1);
 }
 
+/* 
+Transition fadeIn 
+fonte: https://www.tutoriart.com.br/como-criar-transicao-fade-com-css-no-carregamento-da-pagina-e-imagens/#:~:text=fadeIn%20%C3%A9%20o%20valor%20da,zero%20e%20terminando%20em%201).
+*/
+
+@-webkit-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; } 
+    }
+    @-moz-keyframes fadeIn {
+    0%   { opacity: 0;}
+    100% { opacity: 1; }
+    }
+    @-o-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+    }
+    @keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fadeIn {
+    -webkit-animation: fadeIn 2s ease-in-out;
+    -moz-animation:    fadeIn 2s ease-in-out;
+    -o-animation:      fadeIn 2s ease-in-out;
+    animation:         fadeIn 2s ease-in-out;
+}
+
+.fadeIn_modal {
+    -webkit-animation: fadeIn 0.25s ease-in-out;
+    -moz-animation:    fadeIn 0.25s ease-in-out;
+    -o-animation:      fadeIn 0.25s ease-in-out;
+    animation:         fadeIn 0.25s ease-in-out;
+}
+
 /* CSS Modal Habit */
 
 .modal{
