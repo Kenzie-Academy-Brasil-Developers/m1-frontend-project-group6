@@ -1,4 +1,5 @@
 import { Api } from "../controllers/Api.controller.js"
+import { showHabits } from "../controllers/user.controller.js"
 
 export class Habit {
     constructor(id, title, description, category, status) {
@@ -13,18 +14,18 @@ export class Habit {
 
         if (this.status == true) {
 
-            const tr          = document.createElement('tr')
-            const status      = document.createElement('td')
-            const btnSelect   = document.createElement('button')
-            const title       = document.createElement('td')
+            const tr = document.createElement('tr')
+            const status = document.createElement('td')
+            const btnSelect = document.createElement('button')
+            const title = document.createElement('td')
             const description = document.createElement('td')
-            const category    = document.createElement('td')
-            const spanCateg   = document.createElement('span')
-            const edit        = document.createElement('td')
-            const editImg     = document.createElement('img')
-            const imgCheck    = document.createElement('img')
+            const category = document.createElement('td')
+            const spanCateg = document.createElement('span')
+            const edit = document.createElement('td')
+            const editImg = document.createElement('img')
+            const imgCheck = document.createElement('img')
 
-            tr.id        = this.id
+            tr.id = this.id
             btnSelect.id = 'concluded'
 
             status.classList.add('habit_status', `status:${this.id}`)
@@ -35,16 +36,16 @@ export class Habit {
             btnSelect.classList.add('btn_selectHabit-Concluded')
             editImg.classList.add(`${this.id}`)
 
-            title.innerText       = this.title
+            title.innerText = this.title
             description.innerText = this.description
-            spanCateg.innerText   = this.category
+            spanCateg.innerText = this.category
 
-            editImg.src  = 'src/assets/img/editDots.svg'
+            editImg.src = 'src/assets/img/editDots.svg'
             imgCheck.src = 'src/assets/img/checkSignal.svg'
 
             btnSelect.appendChild(imgCheck)
 
-            tr.style.backgroundColor   = '#F1F3F5'
+            tr.style.backgroundColor = '#F1F3F5'
             title.style.textDecoration = 'line-through'
 
             editImg.addEventListener('click', async (e) => {
@@ -90,7 +91,7 @@ export class Habit {
                 confirmDeletion.classList.add(`${habitId}`)
 
             })
-            
+
             // adding eventlistener to close edit modal: 
 
             const closeEditHabitModal = document.querySelector('#close_edit_modal_button')
@@ -122,18 +123,18 @@ export class Habit {
 
         else {
 
-            const tr          = document.createElement('tr')
-            const status      = document.createElement('td')
-            const btnSelect   = document.createElement('button')
-            const title       = document.createElement('td')
+            const tr = document.createElement('tr')
+            const status = document.createElement('td')
+            const btnSelect = document.createElement('button')
+            const title = document.createElement('td')
             const description = document.createElement('td')
-            const category    = document.createElement('td')
-            const spanCateg   = document.createElement('span')
-            const edit        = document.createElement('td')
-            const editImg     = document.createElement('img')
-            const imgCheck    = document.createElement('img')
+            const category = document.createElement('td')
+            const spanCateg = document.createElement('span')
+            const edit = document.createElement('td')
+            const editImg = document.createElement('img')
+            const imgCheck = document.createElement('img')
 
-            tr.id      = this.id
+            tr.id = this.id
 
             status.classList.add('habit_status', `status:${this.id}`)
             btnSelect.classList.add('btn_selectHabit')
@@ -142,10 +143,10 @@ export class Habit {
             category.classList.add('habit_category', `category:${this.id}`)
             edit.classList.add('habit_edit')
             editImg.classList.add(`${this.id}`)
-            
-            title.innerText       = this.title
+
+            title.innerText = this.title
             description.innerText = this.description
-            spanCateg.innerText   = this.category
+            spanCateg.innerText = this.category
 
             editImg.src = 'src/assets/img/editDots.svg'
             imgCheck.src = 'src/assets/img/checkSignal.svg'
@@ -161,9 +162,15 @@ export class Habit {
                     btnSelect.appendChild(imgCheck)
 
                     tr.style.backgroundColor = '#F1F3F5'
-                    tr.style.textDecoration = 'line-through'
+                    // tr.style.textDecoration = 'line-through'
 
                     await Api.completeHabit(this.id)
+
+                    // const allData = await Api.readAllUserHabits()
+                    // const allDataSort = allData.sort((a, b) => b.habit_id - a.habit_id)
+
+                    // showHabits(allDataSort)
+                    location.reload()
                 }
             })
 
