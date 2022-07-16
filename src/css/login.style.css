@@ -73,9 +73,13 @@ section {
 
 .main_initialInfo {
     gap:              1.35rem;
-    color:            white;
+    color:            rgba(var(--color-white), 1);
     border-radius:    8px 8px 0 0;
     background-color: rgba(var(--color-blue-dark), 1);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_initialInfo h1 {
@@ -89,6 +93,8 @@ section {
     display:        flex;
     text-align:     left;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_initialInfo_initialPhrase p {
@@ -98,7 +104,7 @@ section {
     line-height: 2rem;  
 }
 
-.main_initialInfo_initialPhrase span {
+.main_initialInfo_initialPhrase p span {
     color:       rgba(var(--color-grey6), 1);
     font-size:   .875rem;
     font-weight: 400;
@@ -204,17 +210,19 @@ button:hover {
     }
 
     .main_initialInfo {
-        gap:             3rem;
-        display:         flex;
-        padding:         10% 5%;
-        border-radius:   8px 0 0 8px;
-        flex-direction:  column;
-        justify-content: flex-start;
+        gap: 3rem;
+        display: flex;
+        padding: 10% 5% 15% 5%;
+        border-radius: 8px 0 0 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow:    0px 4px 40px 10px rgba(0, 0, 0, 0.25);
     }
 
     .main_initialInfo h1 {
         width:      100%;
-        font-size:  1.7531rem;
+        font-size:  2.5rem;
         text-align: left;
     }
 

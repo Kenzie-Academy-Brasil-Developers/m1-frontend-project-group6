@@ -170,7 +170,7 @@ const allData = await Api.readAllUserHabits()
 const allDataSort = allData.sort((a, b) => b.habit_id - a.habit_id)
 
 async function showHabits(data) {
-
+//
     const habitsTable = document.querySelector('tbody')
     habitsTable.innerText = ''
 
