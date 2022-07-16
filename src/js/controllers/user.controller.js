@@ -1,27 +1,29 @@
 import { Api } from './Api.controller.js'
 import { Habit } from '../models/Habit.model.js'
 
-let user_info = document.querySelector(".header_userImage")
+function editProfile() {
 
-    user_info.addEventListener("click",() => {
+    let user_info = document.querySelector(".header_userImage")
 
-    let user_info_event = document.querySelector(".profile_actions")
+    user_info.addEventListener("click", () => {
 
-    user_info_event.classList.toggle("show")
+        let user_info_event = document.querySelector(".profile_actions")
 
-})
+        user_info_event.classList.toggle("show")
 
-let user_update = document.querySelector(".profile_actions_settings")
+    })
+
+    let user_update = document.querySelector(".profile_actions_settings")
 
     user_update.addEventListener("click", () => {
 
-    let user_update_settings = document.querySelector(".modal_edit_profile")
+        let user_update_settings = document.querySelector(".modal_edit_profile")
 
-    user_update_settings.classList.toggle("show")
+        user_update_settings.classList.toggle("show")
 
-    let user_name = document.querySelector(".section_userInfo_name").innerText
+        let user_name = document.querySelector(".section_userInfo_name").innerText
 
-    let user_change_input = document.querySelector("#edit_profile_name")
+        let user_change_input = document.querySelector("#edit_profile_name")
 
         user_change_input.value = user_name
 
@@ -31,9 +33,9 @@ let user_update = document.querySelector(".profile_actions_settings")
 
     user_close_button.addEventListener("click", () => {
 
-    let user_update_status = document.querySelector(".modal_edit_profile")
+        let user_update_status = document.querySelector(".modal_edit_profile")
 
-    user_update_status.classList.toggle("show")
+        user_update_status.classList.toggle("show")
 
     })
 
@@ -55,59 +57,97 @@ let user_update = document.querySelector(".profile_actions_settings")
 
             content.usr_image = img_url.value
 
-            await Api.updateProfile(content)
+            const apiResponse = await Api.updateProfile(content)
 
-            localStorage.clear() 
+            localStorage.setItem('@Kenzie-Habit-M2:user', JSON.stringify(apiResponse))
 
-            location.href="../../index.html"
+            defineProfileInfo()
+
+            let user_info_event = document.querySelector(".profile_actions")
+
+            user_info_event.classList.toggle("show")
+
+            let user_update_settings = document.querySelector(".modal_edit_profile")
+
+            user_update_settings.classList.toggle("show")
 
         } else if (user_name.value) {
 
             content.usr_name = user_name.value
 
-            await Api.updateProfile(content)
+            const apiResponse = await Api.updateProfile(content)
 
-            localStorage.clear() 
+            localStorage.setItem('@Kenzie-Habit-M2:user', JSON.stringify(apiResponse))
 
-            location.href="../../index.html"
+            defineProfileInfo()
+
+            let user_info_event = document.querySelector(".profile_actions")
+
+            user_info_event.classList.toggle("show")
+
+            let user_update_settings = document.querySelector(".modal_edit_profile")
+
+            user_update_settings.classList.toggle("show")
 
         } else if (img_url.value) {
 
             content.usr_image = img_url.value
 
-            await Api.updateProfile(content)
+            const apiResponse = await Api.updateProfile(content)
 
-             localStorage.clear() 
+            localStorage.setItem('@Kenzie-Habit-M2:user', JSON.stringify(apiResponse))
 
-             location.href="../../index.html"
+            defineProfileInfo()
+
+            let user_info_event = document.querySelector(".profile_actions")
+
+            user_info_event.classList.toggle("show")
+
+            let user_update_settings = document.querySelector(".modal_edit_profile")
+
+            user_update_settings.classList.toggle("show")
 
         }
 
     })
+}
 
-let user_log = document.querySelector("#user_logout")
+editProfile()
 
-user_log.addEventListener("click",() => {
+function userLogout() {
 
-    localStorage.clear() 
+    let user_log = document.querySelector("#user_logout")
 
-    location.href = "../../index.html"
+    user_log.addEventListener("click", () => {
 
-})
+        localStorage.clear()
+
+        location.href = "../../index.html"
+
+    })
+}
+
+userLogout()
 
 function checkToken() {
     const token = localStorage.getItem('@Kenzie-Habit-M2:token')
 
+    if (!token) {
+
+        const habitsTable = document.querySelector('table')
+        habitsTable.innerText = ''
+
+        const modalNoAccess = document.getElementsByClassName('modal_noAccess')[0]
+        modalNoAccess.style.display = 'flex'
+
+    }
+
     const btnLogin = document.getElementsByClassName('btn_login')[0]
     btnLogin.addEventListener('click', () => {
+        
         location.replace('index.html')
     })
 
-    if(!token) {
-        const modalNoAccess = document.getElementsByClassName('modal_noAccess')[0]
-
-        modalNoAccess.style.display = 'flex'
-    }
 }
 
 checkToken()
@@ -115,18 +155,18 @@ checkToken()
 async function defineProfileInfo() {
     const userInfo = await JSON.parse(localStorage.getItem('@Kenzie-Habit-M2:user'))
 
-    const headerUserImage  = document.getElementsByClassName('header_userImage')[0]
+    const headerUserImage = document.getElementsByClassName('header_userImage')[0]
     const sectionUserImage = document.getElementsByClassName('section_userInfo_image')[0]
-    const sectionUserName  = document.getElementsByClassName('section_userInfo_name')[0]
+    const sectionUserName = document.getElementsByClassName('section_userInfo_name')[0]
 
-    headerUserImage.src       = userInfo.usr_image
-    sectionUserImage.src      = userInfo.usr_image
+    headerUserImage.src = userInfo.usr_image
+    sectionUserImage.src = userInfo.usr_image
     sectionUserName.innerText = userInfo.usr_name
 }
 
 defineProfileInfo()
 
-const allData     = await Api.readAllUserHabits()
+const allData = await Api.readAllUserHabits()
 const allDataSort = allData.sort((a, b) => b.habit_id - a.habit_id)
 
 async function showHabits(data) {
@@ -146,7 +186,7 @@ showHabits(allDataSort)
 
 async function filters() {
 
-    const btnFilterAll       = document.getElementsByClassName('btn_filter_all')[0]
+    const btnFilterAll = document.getElementsByClassName('btn_filter_all')[0]
     const btnFilterConcluded = document.getElementsByClassName('btn_filter_concluded')[0]
 
     btnFilterAll.addEventListener('click', (e) => {
@@ -173,16 +213,16 @@ function createHabit() {
 
     const btnCreate = document.querySelector('.btn_create')
     btnCreate.addEventListener('click', (e) => {
-    
-        const titleInput       = document.querySelector('#title')
+
+        const titleInput = document.querySelector('#title')
         const descriptionInput = document.querySelector('#create_habit_description')
 
-        titleInput.value       = ''
+        titleInput.value = ''
         descriptionInput.value = ''
 
         const createHabitModal = document.querySelector('.modal')
         createHabitModal.style.display = 'flex'
-        
+
     })
 }
 
@@ -202,7 +242,7 @@ function requestApiToCreateHabit() {
         })
 
         const habitTitle = document.querySelector('#title').value
-        
+
         if (habitTitle !== '') {
             data.habit_title = habitTitle
         } else {
@@ -210,7 +250,7 @@ function requestApiToCreateHabit() {
         }
 
         const habitDescription = document.querySelector('#create_habit_description').value
-        
+
         if (habitDescription !== '') {
             data.habit_description = habitDescription
         } else {
@@ -218,11 +258,11 @@ function requestApiToCreateHabit() {
         }
 
         const habitCategory = document.querySelector('.create_habit_category').value
-        
+
         if (habitCategory !== '') {
             data.habit_category = habitCategory
         }
-        
+
         const apiResponse = await Api.createHabit(data)
 
         if (apiResponse.habit_id) {
@@ -236,7 +276,7 @@ function requestApiToCreateHabit() {
             modalSuccess.addEventListener('click', () => {
                 modalSuccess.style.display = 'none'
             })
-            
+
         }
         const allHabits = await Api.readAllUserHabits()
 
@@ -372,8 +412,8 @@ async function requestApiToEditHabit() {
 
             const modalDeleteHabit = document.querySelector('.modal_exclude')
             modalDeleteHabit.style.display = 'none'
-            
-            const allHabits     = await Api.readAllUserHabits()
+
+            const allHabits = await Api.readAllUserHabits()
             const allHabitsSort = allHabits.sort((a, b) => b.habit_id - a.habit_id)
             showHabits(allHabitsSort)
 
